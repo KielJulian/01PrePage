@@ -108,9 +108,8 @@ const teamMembers = [
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    scroll-padding-left: 20px;
+    scroll-padding-left: var(--spacing-md);
     -webkit-overflow-scrolling: touch;
     gap: var(--spacing-md);
     padding-bottom: var(--spacing-md);
