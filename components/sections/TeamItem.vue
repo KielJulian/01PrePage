@@ -61,12 +61,8 @@ defineProps({
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
 
-.team-item:hover .team-image {
-  transform: scale(1.05);
-}
 
 .image-placeholder {
   width: 100%;

@@ -52,16 +52,17 @@ import Button from '../core/Button.vue';
 
 .gallery-item {
   border-radius: var(--radius-small);
+  border: 1px solid var(--color-card-boarder);
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-card);
   display: flex;
-  aspect-ratio: 1 / 1; /* Ensures a 1:1 ratio */
+  aspect-ratio: 1 / 1;  
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures full coverage */
+  object-fit: cover;
 }
 
 @media (max-width: 992px) {
