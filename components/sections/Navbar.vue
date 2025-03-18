@@ -97,12 +97,17 @@ onUnmounted(() => {
 }
 
 .header.scrolled .navbar {
+  will-change: transform;
   padding: var(--spacing-sm) var(--spacing-lg);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
+  border: 1px solid var(--color-card-boarder);
+  box-shadow: 
+    rgba(0, 0, 0, 0.07) 0px 0.60219px 0.60219px -1.25px,
+    rgba(0, 0, 0, 0.063) 0px 2.28853px 2.28853px -2.5px,
+    rgba(0, 0, 0, 0.024) 0px 10px 10px -3.75px;
   margin: 0 auto;
   width: 100%;
   max-width: 100%;

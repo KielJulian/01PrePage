@@ -52,7 +52,6 @@ import Button from '../core/Button.vue';
 
 .gallery-item {
   border-radius: var(--radius-small);
-  border: 1px solid var(--color-card-boarder);
   overflow: hidden;
   box-shadow: var(--box-card);
   display: flex;
