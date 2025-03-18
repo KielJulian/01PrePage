@@ -73,8 +73,8 @@ onUnmounted(() => {
 }
 
 .header.scrolled {
-  background-color: var(--color-white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* Changed to transparent */
+  /* Removed box-shadow from here, it's now on the navbar */
 }
 
 .navbar {
@@ -89,6 +89,13 @@ onUnmounted(() => {
 
 .header.scrolled .navbar {
   padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Creates the frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border-radius: 50px; /* Makes the navbar rounded */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 0 auto; /* Centers the navbar */
+  max-width: calc(var(--navbar-width) - 40px); /* Slightly narrower than the header */
 }
 
 .logo h1 {
@@ -168,6 +175,11 @@ onUnmounted(() => {
 }
 
 @media (max-width: 900px) {
+  .header.scrolled .navbar {
+    border-radius: 0; /* Remove rounded corners on mobile */
+    max-width: 100%; /* Full width on mobile */
+  }
+
   .nav-menu {
     position: fixed;
     top: 0;
