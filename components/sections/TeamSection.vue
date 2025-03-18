@@ -97,7 +97,9 @@ const teamMembers = [
   padding: var(--spacing-xxl) 0;
   background-color: var(--color-background);
 }
-
+h3 p {
+  font-size: var(--font-size-sm);
+}
 .team-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

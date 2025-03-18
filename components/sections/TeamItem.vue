@@ -54,7 +54,6 @@ defineProps({
   height: 100%;
 }
 
-
 .image-container {
   height: 200px;
   overflow: hidden;
@@ -74,25 +73,13 @@ defineProps({
 }
 
 
-.image-placeholder {
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-accent-grey);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  font-size: 1.5rem;
-}
-
 .team-info {
-  padding: var(--spacing-md);
+  padding-top: var(--spacing-sm);
 }
 
 .name {
   color: var(--color-primary);
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-sm);
 }
 
 .position {
