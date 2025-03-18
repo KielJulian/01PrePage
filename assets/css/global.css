@@ -133,7 +133,6 @@ h6 {
 
 p {
   font-size: var(--font-size-base);
-  margin-bottom: var(--spacing-md);
 }
 
 .text-sm {

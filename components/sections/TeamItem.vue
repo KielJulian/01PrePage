@@ -31,14 +31,15 @@ defineProps({
     type: String,
     required: true
   },
-  description: {
-    type: String,
-    default: ''
-  },
-  specialties: {
-    type: Array,
-    default: () => []
-  }
+  // Optional fields 
+  // description: {
+  //   type: String,
+  //   default: ''
+  // },
+  // specialties: {
+  //   type: Array,
+  //   default: () => []
+  // }
 });
 </script>
 
@@ -96,7 +97,6 @@ defineProps({
 .position {
   color: var(--color-accent-green);
   font-weight: 600;
-  margin-bottom: var(--spacing-sm);
 }
 
 .description {

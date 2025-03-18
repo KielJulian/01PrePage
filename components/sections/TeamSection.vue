@@ -29,29 +29,29 @@ const teamMembers = [
   {
     name: 'Dr. Martina Weber',
     position: 'Leitende Ärztin',
-    description: 'Dr. Weber bringt über 15 Jahre Erfahrung in der allgemeinen Medizin mit und leitet unser Ärzteteam mit Expertise und Einfühlungsvermögen.',
-    specialties: ['Allgemeinmedizin', 'Präventive Medizin'],
+    // description: 'Dr. Weber bringt über 15 Jahre Erfahrung in der allgemeinen Medizin mit und leitet unser Ärzteteam mit Expertise und Einfühlungsvermögen.',
+    // specialties: ['Allgemeinmedizin', 'Präventive Medizin'],
     image: '/img/team/Dr-Martina-Weber.jpg'
   },
   {
-    name: 'Dr. Thomas Müller',
+    name: 'Dr. Thomas Merano',
     position: 'Kardiologe',
-    description: 'Als Spezialist für Herzgesundheit bringt Dr. Müller umfassende Erfahrung in der Diagnose und Behandlung kardiovaskulärer Erkrankungen mit.',
-    specialties: ['Kardiologie', 'Innere Medizin'],
+    // description: 'Als Spezialist für Herzgesundheit bringt Dr. Müller umfassende Erfahrung in der Diagnose und Behandlung kardiovaskulärer Erkrankungen mit.',
+    // specialties: ['Kardiologie', 'Innere Medizin'],
     image: '/img/team/Dr-Thomas-Müller.jpg'
   },
   {
     name: 'Dr. Sophie Becker',
     position: 'Dermatologin',
-    description: 'Dr. Becker ist auf Hautgesundheit und ästhetische Dermatologie spezialisiert und bietet moderne Behandlungsmethoden für verschiedene Hauterkrankungen.',
-    specialties: ['Dermatologie', 'Ästhetische Medizin'],
+    // description: 'Dr. Becker ist auf Hautgesundheit und ästhetische Dermatologie spezialisiert und bietet moderne Behandlungsmethoden für verschiedene Hauterkrankungen.',
+    // specialties: ['Dermatologie', 'Ästhetische Medizin'],
     image: '/img/team/Dr-Sophie-Becker.jpg'
   },
   {
     name: 'Marion Schmidt',
     position: 'Medizinische Fachangestellte',
-    description: 'Marion kümmert sich um administrative Aufgaben und sorgt für einen reibungslosen Praxisablauf. Sie ist oft Ihre erste Ansprechpartnerin in unserer Praxis.',
-    specialties: ['Patientenbetreuung', 'Organisation'],
+    // description: 'Marion kümmert sich um administrative Aufgaben und sorgt für einen reibungslosen Praxisablauf. Sie ist oft Ihre erste Ansprechpartnerin in unserer Praxis.',
+    // specialties: ['Patientenbetreuung', 'Organisation'],
     image: '/img/team/Marion-Schmidt.jpg'
   }
 ];
