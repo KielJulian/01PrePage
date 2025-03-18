@@ -102,9 +102,9 @@ onUnmounted(() => {
 .header.scrolled .navbar {
   will-change: transform;
   transition: 
-    border-radius 0.2s ease,    /* Radius changes first */
+    border-radius 0.2s ease,
     border-width 0.2s ease 0.05s;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -127,7 +127,7 @@ onUnmounted(() => {
 
 .logo img {
   display: block;
-  width: 24px;
+  width: 36px;
   height: auto;
 }
 
