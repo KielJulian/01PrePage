@@ -110,6 +110,7 @@ const teamMembers = [
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    scroll-padding-left: 20px;
     -webkit-overflow-scrolling: touch;
     gap: var(--spacing-md);
     padding-bottom: var(--spacing-md);
@@ -120,6 +121,7 @@ const teamMembers = [
     padding-left: 40px; /* Add padding for first item spacing */
     padding-right: 40px; /* Add padding for last item spacing */
   }
+  
   
   .team-grid::-webkit-scrollbar {
     height: 8px;
