@@ -68,13 +68,20 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   z-index: 1000;
+  margin-top: var(--spacing-lg);
   transition: all 0.3s ease;
   background-color: transparent;
+  box-sizing: border-box;
 }
 
 .header.scrolled {
-  background-color: transparent; /* Changed to transparent */
-  /* Removed box-shadow from here, it's now on the navbar */
+  background-color: transparent;
+  margin-top: var(--spacing-sm);
+  width: calc(100% - var(--spacing-3xl) * 2);
+  left: var(--spacing-3xl);
+  right: var(--spacing-3xl);
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .navbar {
@@ -82,20 +89,37 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   max-width: var(--navbar-width);
+  width: 100%;
   margin: 0 auto;
   padding: var(--spacing-md) var(--spacing-lg);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .header.scrolled .navbar {
   padding: var(--spacing-sm) var(--spacing-lg);
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Creates the frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  border-radius: 50px; /* Makes the navbar rounded */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin: 0 auto; /* Centers the navbar */
-  max-width: calc(var(--navbar-width) - 40px); /* Slightly narrower than the header */
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* For screens smaller than the max navbar width plus margins */
+@media (max-width: calc(var(--navbar-width) + var(--spacing-3xl) * 2)) {
+  .header.scrolled {
+    width: calc(100% - var(--spacing-lg) * 2);
+    left: var(--spacing-lg);
+    right: var(--spacing-lg);
+  }
+  
+  .header.scrolled .navbar {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
 }
 
 .logo h1 {
@@ -175,9 +199,15 @@ onUnmounted(() => {
 }
 
 @media (max-width: 900px) {
+  .header.scrolled {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
   .header.scrolled .navbar {
-    border-radius: 0; /* Remove rounded corners on mobile */
-    max-width: 100%; /* Full width on mobile */
+    border-radius: 0;
+    max-width: 100%;
   }
 
   .nav-menu {
