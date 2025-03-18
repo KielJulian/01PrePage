@@ -120,7 +120,6 @@ const teamMembers = [
   .team-grid {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
