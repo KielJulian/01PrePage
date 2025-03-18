@@ -49,18 +49,26 @@ defineProps({
   border: 1px solid var(--color-card-boarder);
   overflow: hidden;
   box-shadow: var(--box-card);
+  padding: var(--spacing-md);
 }
 
 
 .image-container {
   height: 250px;
   overflow: hidden;
+  padding-top: 133.33%;
+  position: relative;
 }
 
 .team-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: var(--radius-small);
+  filter: grayscale(100%);
 }
 
 

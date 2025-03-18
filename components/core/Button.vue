@@ -43,7 +43,7 @@ defineEmits(['click'])
 }
 
 .btn-primary {
-  background-image: linear-gradient(50deg, var(--color-primary), var(--color-highlight-pink));
+  background-image: linear-gradient(50deg, var(--color-primary), var(--color-highlight-purple));
   background-size: 100% auto;
   color: var(--color-white);
 }
