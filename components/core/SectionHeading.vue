@@ -20,7 +20,7 @@ defineProps({
 
 <style scoped>
 .section-heading {
-  text-align: center;
+  text-align: start;
   margin-bottom: var(--spacing-xl);
 }
 
@@ -32,22 +32,11 @@ defineProps({
   display: inline-block;
 }
 
-.title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background-color: var(--color-accent-yellow);
-}
 
 .subtitle {
   color: #666;
   font-size: 1.2rem;
   max-width: 600px;
-  margin: var(--spacing-sm) auto 0;
 }
 
 @media (max-width: 768px) {

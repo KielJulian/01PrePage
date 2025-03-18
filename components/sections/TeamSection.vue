@@ -49,7 +49,7 @@ const teamMembers = [
   },
   {
     name: 'Marion Schmidt',
-    position: 'Medizinische Fachangestellte',
+    position: 'Fachangestellte',
     // description: 'Marion kümmert sich um administrative Aufgaben und sorgt für einen reibungslosen Praxisablauf. Sie ist oft Ihre erste Ansprechpartnerin in unserer Praxis.',
     // specialties: ['Patientenbetreuung', 'Organisation'],
     image: '/img/team/Marion-Schmidt.jpg'
