@@ -117,14 +117,22 @@ const teamMembers = [
 }
 
 @media (max-width: 768px) {
+  .team-section {
+    position: relative;
+    overflow: hidden;
+  }
+
   .team-grid {
     display: flex;
     flex-wrap: nowrap;
+    overflow-x: auto; /* Keep auto for scrolling */
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     gap: var(--spacing-md);
     padding-bottom: var(--spacing-md);
+    margin-right: -20px; /* Creates visual overflow effect */
+    padding-right: 20px; /* Compensates for the negative margin */
   }
   
   .team-grid::-webkit-scrollbar {
