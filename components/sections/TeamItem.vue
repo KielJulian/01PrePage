@@ -8,11 +8,6 @@
       <h3 class="name">{{ name }}</h3>
       <p class="position">{{ position }}</p>
       <p v-if="description" class="description">{{ description }}</p>
-      <div v-if="specialties && specialties.length" class="specialties">
-        <span v-for="(specialty, index) in specialties" :key="index" class="specialty-tag">
-          {{ specialty }}
-        </span>
-      </div>
     </div>
   </div>
 </template>
@@ -31,15 +26,6 @@ defineProps({
     type: String,
     required: true
   },
-  // Optional fields 
-  // description: {
-  //   type: String,
-  //   default: ''
-  // },
-  // specialties: {
-  //   type: Array,
-  //   default: () => []
-  // }
 });
 </script>
 
