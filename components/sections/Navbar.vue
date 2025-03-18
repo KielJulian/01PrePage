@@ -2,7 +2,7 @@
   <header class="header" :class="{ 'scrolled': isScrolled }">
     <div class="navbar">
       <div class="logo">
-        <h1>01PrePage</h1>
+        <img src="/public/img/icons/logo.svg" alt="Logo">
       </div>
       
       <nav class="nav-menu" :class="{ 'active': mobileMenuActive }">
@@ -115,8 +115,20 @@ onUnmounted(() => {
     rgba(0, 0, 0, 0.063) 0px 2.28853px 2.28853px -2.5px,
     rgba(0, 0, 0, 0.024) 0px 10px 10px -3.75px;
   margin: 0 auto;
-  width: 100%;
-  max-width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: max-content;
+}
+
+.logo img {
+  display: block;
+  width: 24px;
+  height: auto;
 }
 
 /* For screens smaller than the max navbar width plus margins */

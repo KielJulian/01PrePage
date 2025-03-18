@@ -79,6 +79,7 @@
 }
 
 body {
+  size: var(--max-width);
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
@@ -147,10 +148,12 @@ a {
   color: inherit;
 }
 
+/* ?? 
 img {
   max-width: 100%;
   height: auto;
 }
+*/
 
 .container {
   width: 100%;
