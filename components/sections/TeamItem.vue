@@ -113,8 +113,25 @@ defineProps({
 
 @media (max-width: 768px) {
   .team-item {
-    width: 250px;
-    min-width: 250px;
+    width: 200px;
+    min-width: 200px;
+  }
+  
+  .image-container {
+    height: 160px;
+    padding-top: 110%;
+  }
+  
+  .team-info {
+    padding-top: var(--spacing-xs);
+  }
+  
+  .name {
+    font-size: 0.95rem;
+  }
+  
+  .position {
+    font-size: 0.85rem;
   }
 }
 </style> 
