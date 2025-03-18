@@ -27,8 +27,7 @@ definePageMeta({
 
 <style scoped>
 .hero-section {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-primary);
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -40,7 +39,6 @@ definePageMeta({
 .hero-section h1 {
   font-size: 3rem;
   margin-bottom: var(--spacing-md);
-  color: var(--color-white);
 }
 
 .hero-section p {

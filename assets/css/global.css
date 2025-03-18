@@ -9,6 +9,7 @@
   --color-highlight-purple: #E7CFF1;
   --color-highlight-mint: #E2FAE0;
   --color-white: #FFFFFF;
+  --color-card-boarder: #1338821a;
 
   /* Spacing */
   --spacing-xs: 8px;
@@ -48,6 +49,12 @@
   /* Border-radius */
   --radius-small: 15px;
   --radius-large: 20px;
+  
+  /* Shadows */
+  --box-shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --box-shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --box-shadow-large: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --box-card: 0 1px 4px -2px #0000001a;
 }
 
 @font-face {
@@ -147,6 +154,19 @@ img {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+}
+
+/* Utility classes */
+.shadow {
+  box-shadow: var(--box-shadow-default);
+}
+
+.shadow-medium {
+  box-shadow: var(--box-shadow-medium);
+}
+
+.shadow-large {
+  box-shadow: var(--box-shadow-large);
 }
 
 /* Responsive utilities */

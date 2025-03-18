@@ -35,7 +35,6 @@ import Button from '../core/Button.vue';
 <style scoped>
 .praxis-section {
   padding: var(--spacing-xxl) 0;
-  background-color: var(--color-white);
 }
 
 .praxis-content {

@@ -74,7 +74,6 @@ import Button from '../core/Button.vue';
 <style scoped>
 .kontakt-section {
   padding: var(--spacing-xxl) 0;
-  background-color: var(--color-white);
 }
 
 .kontakt-content {

@@ -44,12 +44,8 @@ defineProps({
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
 }
 
-.leistung-item:hover {
-  transform: translateY(-5px);
-}
 
 .icon-container {
   width: 70px;

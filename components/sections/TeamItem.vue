@@ -46,14 +46,11 @@ defineProps({
 .team-item {
   background-color: var(--color-white);
   border-radius: var(--radius-small);
+  border: 1px solid var(--color-card-boarder);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  box-shadow: var(--box-card);
 }
 
-.team-item:hover {
-  transform: translateY(-5px);
-}
 
 .image-container {
   height: 250px;

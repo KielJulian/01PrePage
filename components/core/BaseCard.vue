@@ -18,10 +18,10 @@ defineProps({
   background-color: var(--color-white);
   border-radius: var(--radius-small);
   padding: var(--spacing-md);
-  transition: all 0.3s ease;
 }
 
 .elevated {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-card-boarder);
+  box-shadow: var(--box-card);
 }
 </style> 
