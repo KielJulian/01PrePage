@@ -85,6 +85,9 @@ body {
   line-height: var(--line-height-normal);
   background-color: var(--color-background);
   color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Typography */

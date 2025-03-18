@@ -52,11 +52,21 @@
         
         <div class="map-container">
           <TopCard>
-            <div class="map-placeholder">
+            <div v-if="!showMap" class="map-placeholder">
               <p>Google Maps Einbettung</p>
               <p>Aus Datenschutzgründen wird die Karte erst nach Ihrer Zustimmung geladen.</p>
-              <Button>Karte laden</Button>
+              <Button @click="loadMap">Karte laden</Button>
             </div>
+            <iframe 
+              v-else
+              :src="mapUrl"
+              width="100%" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </TopCard>
         </div>
       </div>
@@ -65,10 +75,18 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import SectionHeading from '../core/SectionHeading.vue';
 import KontaktItem from './KontaktItem.vue';
 import TopCard from '../core/TopCard.vue';
 import Button from '../core/Button.vue';
+
+const showMap = ref(false);
+const mapUrl = "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2366.107498526846!2d8.665461376775237!3d53.64200057169095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTPCsDM4JzMxLjIiTiA4wrA0MCcwMi4xIkU!5e0!3m2!1sde!2sde!4v1715095183370!5m2!1sde!2sde";
+
+function loadMap() {
+  showMap.value = true;
+}
 </script>
 
 <style scoped>

@@ -85,6 +85,10 @@ onUnmounted(() => {
 }
 
 .navbar {
+  will-change: transform;
+  transition: 
+    border-width 0.2s ease,
+    border-radius 0.2s ease 0.05s; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,12 +96,14 @@ onUnmounted(() => {
   width: 100%;
   margin: 0 auto;
   padding: var(--spacing-md) var(--spacing-lg);
-  transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
 .header.scrolled .navbar {
   will-change: transform;
+  transition: 
+    border-radius 0.2s ease,    /* Radius changes first */
+    border-width 0.2s ease 0.05s;
   padding: var(--spacing-sm) var(--spacing-lg);
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
