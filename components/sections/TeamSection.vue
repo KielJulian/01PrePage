@@ -111,14 +111,12 @@ const teamMembers = [
     scroll-behavior: smooth;
     scroll-padding-left: var(--spacing-md);
     -webkit-overflow-scrolling: touch;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xs);
     padding-bottom: var(--spacing-md);
-    
-    /* Make grid wider than container and center it */
-    width: calc(100% + 80px); /* Extend beyond container */
-    margin-left: -40px; /* Pull left side out of view */
-    padding-left: 40px; /* Add padding for first item spacing */
-    padding-right: 40px; /* Add padding for last item spacing */
+    width: calc(100% + 80px);
+    margin-left: -40px; 
+    padding-left: 40px;
+    padding-right: 40px;
   }
   
   
