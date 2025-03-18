@@ -9,7 +9,7 @@
         </div>
         
         <!-- Desktop Navigation -->
-        <nav class="nav-menu desktop-only">
+        <nav class="nav-menu" v-if="!isMobile">
           <ul class="nav-list">
             <li class="nav-item">
               <a href="#" class="nav-link">Home</a>
@@ -30,7 +30,7 @@
         </nav>
         
         <div class="nav-right">
-          <Button>Termin vereinbaren</Button>
+          <Button v-if="!isMobile" class="main-button">Termin vereinbaren</Button>
           <div class="menu-toggle" @click="toggleMobileMenu">
             <div class="bar" :class="{ 'active': mobileMenuActive }"></div>
             <div class="bar" :class="{ 'active': mobileMenuActive }"></div>
@@ -65,7 +65,7 @@
           </li>
         </ul>
         <div class="dropdown-footer">
-          <Button variant="secondary">Termin vereinbaren</Button>
+          <Button v-if="isMobile" class="main-button">Termin vereinbaren</Button>
         </div>
       </div>
     </div>
@@ -142,10 +142,8 @@ onUnmounted(() => {
   max-width: var(--navbar-width);
   width: 100%;
   margin: 0 auto;
-  background-color: white;
+  background-color: transparent;
   border-radius: 32px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
 }
 
 .navbar.expanded {
@@ -158,11 +156,10 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-md) var(--spacing-lg);
-  background-color: white;
+  background-color: transparent;
 }
 
 .header.scrolled .navbar {
-  padding: 0;
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -261,7 +258,7 @@ onUnmounted(() => {
   display: none;
   padding: var(--spacing-lg);
   position: relative;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--color-card-boarder);
 }
 
 .dropdown-content.visible {
@@ -298,7 +295,7 @@ onUnmounted(() => {
   justify-content: center;
   padding-top: var(--spacing-md);
   margin-top: var(--spacing-md);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--color-card-boarder);
 }
 
 .nav-menu {
@@ -354,8 +351,14 @@ onUnmounted(() => {
     border-radius: 32px;
     max-width: calc(100% - var(--spacing-lg) * 2);
     margin: 0 auto;
-    background-color: white;
+    background-color: white !important;
     overflow: hidden;
+    box-shadow: 0 4px 12px var(--box-card);
+    border: 1px solid var(--color-card-boarder);
+  }
+  
+  .navbar-main {
+    background-color: white;
   }
   
   .navbar.expanded {
@@ -366,11 +369,13 @@ onUnmounted(() => {
     max-width: calc(100% - var(--spacing-lg) * 2);
     border-radius: 32px;
     overflow: hidden;
+    max-height: none;
   }
   
   .dropdown-content {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding-bottom: var(--spacing-md);
+    background-color: white;
   }
   
   .menu-toggle {
@@ -379,6 +384,10 @@ onUnmounted(() => {
   
   .desktop-only {
     display: none;
+  }
+  
+  .desktop-only.main-button {
+    display: none !important;
   }
   
   .navbar.expanded .logo-text {
@@ -390,5 +399,13 @@ onUnmounted(() => {
   .logo-text {
     display: none;
   }
+  
+  .dropdown-footer .main-button {
+    display: none;
+  }
+}
+
+.main-button {
+  display: block;
 }
 </style> 
