@@ -51,13 +51,14 @@ defineProps({
   overflow: hidden;
   box-shadow: var(--box-card);
   padding: var(--spacing-sm);
+  height: 100%;
 }
 
 
 .image-container {
-  height: 250px;
+  height: 200px;
   overflow: hidden;
-  padding-top: 133.33%;
+  padding-top: 120%;
   position: relative;
 }
 
@@ -90,18 +91,19 @@ defineProps({
 
 .name {
   color: var(--color-primary);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: var(--spacing-xs);
 }
 
 .position {
   color: var(--color-accent-green);
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .description {
   color: #555;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-bottom: var(--spacing-sm);
   line-height: 1.6;
 }
@@ -120,5 +122,12 @@ defineProps({
   padding: 4px 10px;
   border-radius: 20px;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .team-item {
+    width: 250px;
+    min-width: 250px;
+  }
 }
 </style> 

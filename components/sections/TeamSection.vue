@@ -100,25 +100,51 @@ const teamMembers = [
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: var(--spacing-lg);
 }
 
 @media (max-width: 1200px) {
   .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .team-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
   }
-}
-
-@media (max-width: 576px) {
-  .team-grid {
-    grid-template-columns: repeat(1, 1fr);
+  
+  .team-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .team-grid::-webkit-scrollbar-track {
+    background: var(--color-background-light);
+    border-radius: 4px;
+  }
+  
+  .team-grid::-webkit-scrollbar-thumb {
+    background: var(--color-accent-green);
+    border-radius: 4px;
+  }
+  
+  .team-grid > * {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
   }
 }
 </style> 
