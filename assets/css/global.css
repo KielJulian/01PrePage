@@ -20,6 +20,26 @@
   --spacing-3xl: 96px;
   --spacing-4xl: 128px;
 
+  /* Typography */
+  --font-family: 'Inter', Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 40px;
+  --font-size-4xl: 48px;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.8;
+
   /* Layout */
   --content-width: 1200px;
   --max-width: 1400px;
@@ -30,6 +50,20 @@
   --radius-large: 20px;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
 /* Reset and base styles */
 * {
   box-sizing: border-box;
@@ -38,10 +72,64 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
   background-color: var(--color-background);
   color: #333;
-  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-md);
+}
+
+.subheading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+p {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-md);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
 }
 
 a {
@@ -72,6 +160,9 @@ img {
   :root {
     --spacing-xl: 32px;
     --spacing-xxl: 48px;
+    --font-size-4xl: 40px;
+    --font-size-3xl: 32px;
+    --font-size-2xl: 28px;
   }
 }
 
@@ -80,5 +171,9 @@ img {
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xl: 24px;
+    --font-size-4xl: 32px;
+    --font-size-3xl: 28px;
+    --font-size-2xl: 24px;
+    --font-size-xl: 20px;
   }
 } 
