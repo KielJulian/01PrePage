@@ -49,7 +49,7 @@ defineProps({
   border: 1px solid var(--color-card-boarder);
   overflow: hidden;
   box-shadow: var(--box-card);
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
 }
 
 

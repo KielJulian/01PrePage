@@ -178,9 +178,10 @@ onUnmounted(() => {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
+  transform: translateX(-50%);
   background-color: var(--color-accent-yellow);
   transition: width 0.3s ease;
 }
