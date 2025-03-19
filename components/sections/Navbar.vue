@@ -114,7 +114,7 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   z-index: 1000;
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-md);
   transition: all 0.3s ease;
   background-color: transparent;
   box-sizing: border-box;
@@ -228,6 +228,7 @@ onUnmounted(() => {
   cursor: pointer;
 }
 
+/* Navbar Hamburger */
 .bar {
   width: 25px;
   height: 3px;
@@ -328,14 +329,14 @@ onUnmounted(() => {
 
 @media (max-width: 900px) {
   .header {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
     width: 100%;
     left: 0;
     right: 0;
   }
   
   .header.scrolled {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
     width: 100%;
     left: 0;
     right: 0;
