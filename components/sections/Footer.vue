@@ -89,7 +89,6 @@
 .footer-legal a {
   color: var(--color-white);
   opacity: 0.8;
-  transition: opacity 0.3s ease;
 }
 
 .footer-links a:hover,

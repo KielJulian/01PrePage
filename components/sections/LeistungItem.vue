@@ -33,11 +33,6 @@ defineProps({
   display: flex;
   flex-direction: column;
   padding: var(--spacing-md);
-  transition: transform 0.3s ease;
-}
-
-.leistung-item:hover {
-  transform: translateY(-5px);
 }
 
 .title {

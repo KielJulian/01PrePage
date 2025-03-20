@@ -311,7 +311,6 @@ const clearTags = () => {
   border: 1px solid var(--color-border, #e0e0e0);
   color: var(--color-text, #555);
   cursor: pointer;
-  transition: all 0.2s ease;
   font-size: 0.9rem;
 }
 

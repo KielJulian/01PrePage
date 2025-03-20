@@ -128,7 +128,6 @@ onUnmounted(() => {
   width: 100%;
   z-index: 1000;
   margin-top: var(--spacing-md);
-  transition: all 0.3s ease;
   background-color: transparent;
   box-sizing: border-box;
 }
@@ -220,7 +219,6 @@ onUnmounted(() => {
   color: var(--color-primary);
   font-size: 1.8rem;
   margin: 0;
-  transition: all 0.3s ease;
 }
 
 .header.scrolled .logo h1 {
@@ -245,7 +243,6 @@ onUnmounted(() => {
   width: 25px;
   height: 3px;
   background-color: var(--color-primary);
-  transition: all 0.3s ease;
 }
 
 .bar.active:nth-child(1) {
@@ -305,10 +302,6 @@ onUnmounted(() => {
   border-top: 1px solid var(--color-card-boarder);
 }
 
-.nav-menu {
-  transition: all 0.3s ease;
-}
-
 .nav-list {
   display: flex;
   list-style: none;
@@ -320,7 +313,6 @@ onUnmounted(() => {
   font-weight: 500;
   padding: var(--spacing-xs) 0;
   position: relative;
-  transition: all 0.3s ease;
 }
 
 .nav-link::after {
@@ -332,7 +324,6 @@ onUnmounted(() => {
   height: 2px;
   transform: translateX(-50%);
   background-color: var(--color-accent-yellow);
-  transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
@@ -373,7 +364,7 @@ onUnmounted(() => {
     top: auto;
     left: auto;
     width: auto;
-    max-width: calc(100% - var(--spacing-lg) * 2);
+
     border-radius: 32px;
     overflow: hidden;
     max-height: none;
