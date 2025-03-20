@@ -123,16 +123,15 @@ onUnmounted(() => {
 .header.scrolled {
   background-color: transparent;
   margin-top: var(--spacing-sm);
-  width: calc(100% - var(--spacing-3xl) * 2);
-  left: var(--spacing-3xl);
-  right: var(--spacing-3xl);
+  width: calc(100% - var(--spacing-md) * 2);
+  left: var(--spacing-md);
+  right: var(--spacing-md);
   margin-left: 0;
   margin-right: 0;
 }
 
 .navbar {
   will-change: transform;
-  transition: all 0.3s ease;
   max-width: var(--navbar-width);
   width: 100%;
   margin: 0 auto;
@@ -344,7 +343,7 @@ onUnmounted(() => {
   
   .navbar {
     border-radius: 32px;
-    max-width: calc(100% - var(--spacing-lg) * 2);
+    max-width: calc(100% - var(--spacing-xs) * 2);
     margin: 0 auto;
     background-color: white !important;
     overflow: hidden;
