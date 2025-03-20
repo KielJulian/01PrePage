@@ -51,19 +51,19 @@ defineEmits(['click'])
 .btn-primary:hover {
   background-position: right center;
   background-size: 200% auto;
-  animation: pulse512 1.5s infinite;
+  animation: main 1.5s infinite;
 }
 
 .btn-secondary {
-  background-color: var(--color-secondary-yellow);
+  background-color: var(--color-accent-green);
   background-size: 100% auto;
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .btn-secondary:hover {
   background-position: right center;
   background-size: 200% auto;
-  animation: pulse512 1.5s infinite;
+  animation: secondary 1.5s infinite;
 }
 
 .btn-outline {
@@ -74,7 +74,7 @@ defineEmits(['click'])
 
 .btn-outline:hover {
   background-color: var(--color-primary);
-  animation: pulse512 1.5s infinite;
+  animation: main 1.5s infinite;
 }
 
 .btn-large {
@@ -82,7 +82,7 @@ defineEmits(['click'])
   font-size: 1.1rem;
 }
 
-@keyframes pulse512 {
+@keyframes main {
   0% {
     box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0.4);
   }
@@ -91,6 +91,18 @@ defineEmits(['click'])
   }
   100% {
     box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0);
+  }
+}
+
+@keyframes secondary {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--color-accent-green-rgb), 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(var(--color-accent-green-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--color-accent-green-rgb), 0);
   }
 }
 

@@ -120,7 +120,7 @@ import KontaktItem from './KontaktItem.vue';
 }
 
 em {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
 }
 
 @media (max-width: 992px) {

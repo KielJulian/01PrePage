@@ -6,7 +6,7 @@
           <div v-if="!showMap" class="map-placeholder">
             <p>Google Maps Einbettung</p>
             <p>Aus Datenschutzgründen wird die Karte erst nach Ihrer Zustimmung geladen.</p>
-            <Button @click="loadMap">Karte laden</Button>
+            <Button @click="loadMap" class="btn-secondary">Karte laden</Button>
           </div>
           <iframe 
             v-else

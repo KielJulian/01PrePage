@@ -10,8 +10,4 @@
   padding: var(--spacing-lg);
 }
 
-.top-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-}
 </style> 
