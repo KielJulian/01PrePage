@@ -3,12 +3,15 @@
   --color-background: #F7F7F7;
   --color-primary: #133882;
   --color-primary-rgb: 19, 56, 130;
-  --color-accent-yellow: #F6D5AB;
-  --color-accent-grey: #C8C7CF;
-  --color-accent-green: #859321;
-  --color-highlight-pink: #FF7F7E;
-  --color-highlight-purple: #E7CFF1;
-  --color-highlight-mint: #E2FAE0;
+  --color-accent-yellow: #FCD09E;
+  --color-accent-grey: #BBBFD3;
+  --color-accent-green: #849709;
+  --color-highlight-pink: #FF7F7F;
+  --color-highlight-pink-dark: #DB3E3E;
+  --color-highlight-purple: #CF84EE;
+  --color-highlight-purple-dark: #BB74D9;
+  --color-highlight-mint: #E1FAE0;
+  --color-highlight-mint: #90D98A;
   --color-white: #FFFFFF;
   --color-card-boarder: #1338821a;
 
