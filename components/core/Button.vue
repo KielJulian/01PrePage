@@ -32,7 +32,7 @@ defineEmits(['click'])
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-button);
   font-weight: 600;
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
@@ -43,7 +43,7 @@ defineEmits(['click'])
 }
 
 .btn-primary {
-  background-image: linear-gradient(50deg, var(--color-primary), var(--color-highlight-purple));
+  background-color: var(--color-primary);
   background-size: 100% auto;
   color: var(--color-white);
 }
@@ -55,7 +55,7 @@ defineEmits(['click'])
 }
 
 .btn-secondary {
-  background-image: linear-gradient(30deg, var(--color-accent-yellow), #f8b459);
+  background-color: var(--color-secondary-yellow);
   background-size: 100% auto;
   color: var(--color-primary);
 }

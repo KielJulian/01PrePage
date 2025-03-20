@@ -7,7 +7,6 @@
     <div class="team-info">
       <h3 class="name">{{ name }}</h3>
       <p class="position">{{ position }}</p>
-      <p v-if="description" class="description">{{ description }}</p>
     </div>
   </div>
 </template>
@@ -50,9 +49,11 @@ defineProps({
 .team-image {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: var(--radius-small);
   filter: grayscale(100%);
@@ -72,20 +73,6 @@ defineProps({
   color: var(--color-accent-green);
   font-weight: 600;
   font-size: 0.9rem;
-}
-
-.description {
-  color: #555;
-  font-size: 0.9rem;
-  margin-bottom: var(--spacing-sm);
-  line-height: 1.6;
-}
-
-.specialties {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-sm);
 }
 
 .specialty-tag {

@@ -23,8 +23,8 @@ defineProps({
 .kontakt-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: start;
+  text-align: start;
   gap: var(--spacing-sm);
   margin-bottom: var(--spacing-lg);
 }

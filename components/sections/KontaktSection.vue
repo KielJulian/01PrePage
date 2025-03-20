@@ -7,46 +7,91 @@
       />
       
       <div class="kontakt-items-grid">
-        <KontaktItem title="Sichere Datenübertragung">
+        <KontaktItem title="Kontakt">
           <template #icon>
             <span>✓</span>
           </template>
-          <p>Heureka überträgt Praxisdaten sicher verschlüsselt aus deinem System an die Anwendung.</p>
+          <ul>
+            <li><h6>Telefon</h6></li>
+            <li>07743 9213487</li>
+            <li><h6>E-Mail</h6></li>
+            <li>info@praxis-bergblick.de</li>
+            <li><h6>Fax</h6></li>
+            <li>07743 9213488</li>
+            <li><h6>Adresse</h6></li>
+            <li>Lindenweg 23</li>
+            <li>78315 Radolfzell</li>
+          </ul>
+        </KontaktItem>
+
+        <KontaktItem title="Öffnungszeiten">
+          <template #icon>
+            <span>✓</span>
+          </template>
+          <ul>
+            <li><h6>Montag</h6>
+                <ul>
+                    <li>07:30 bis 12:00 Uhr</li>
+                    <li>15:00 bis 17:30 Uhr</li>
+                </ul>
+            </li>
+            <li><h6>Dienstag</h6>
+                <ul>
+                    <li>07:30 bis 12:00 Uhr</li>
+                    <li>15:00 bis 17:30 Uhr</li>
+                </ul>
+            </li>
+            <li><h6>Mittwoch</h6>
+                <ul>
+                    <li>07:30 bis 12:00 Uhr</li>
+                </ul>
+            </li>
+            <li><h6>Donnerstag</h6>
+                <ul>
+                    <li>07:30 bis 12:00 Uhr</li>
+                    <li>15:00 bis 17:30 Uhr</li>
+                </ul>
+            </li>
+            <li><h6>Freitag</h6>
+                <ul>
+                    <li>07:30 bis 12:00 Uhr</li>
+                </ul>
+            </li>
+          </ul>
         </KontaktItem>
         
-        <KontaktItem title="Kein Speichern deiner Daten">
+        <KontaktItem title="Urlaubszeiten">
           <template #icon>
             <span>✓</span>
           </template>
-          <p>Heureka liest deine Praxisdaten nicht mit und speichert diese auch nicht. Deine Daten bleiben in deinem PIS.</p>
+          <h6>2025</h6>
+          <ul>
+            <li>17. Januar – 24. Januar</li>
+            <li>5. April – 12. April</li>
+            <li>22. Juni – 3. Juli</li>
+            <li>14. August – 29. August</li>
+            <li>7. Oktober – 15. Oktober</li>
+            <li>18. November – 28. November</li>
+          </ul>
         </KontaktItem>
-        
-        <KontaktItem title="Entscheidungsfreiheit - 100%">
+
+        <KontaktItem title="Notfallkontakte">
           <template #icon>
             <span>✓</span>
           </template>
-          <p>Heureka lässt dir offen, wohin du welche Daten teilen willst - immer mit dem notwendigen Patienteneinverständnis.</p>
-        </KontaktItem>
-        
-        <KontaktItem title="Datenschutzkonform">
-          <template #icon>
-            <span>✓</span>
-          </template>
-          <p>Heureka, sowie die eingebundenen Anwendungen, halten sich an die Vorgaben gemäss neuem Schweizer DSG.</p>
-        </KontaktItem>
-        
-        <KontaktItem title="Volle Transparenz der Datenabfragen">
-          <template #icon>
-            <span>✓</span>
-          </template>
-          <p>Heureka ermöglicht dir jederzeit jegliche Zugriffe deiner Anwendungen einzusehen.</p>
-        </KontaktItem>
-        
-        <KontaktItem title="Von Experten geprüft und empfohlen">
-          <template #icon>
-            <span>✓</span>
-          </template>
-          <p>Heureka wird regelmässig punkto Sicherheit und Datenschutz geprüft und bindet die Experten aktiv mit ein.</p>
+          <ul>
+            <li><h6>Notarzt</h6> <em>(lebensbedrohliche Notfälle)</em></li>
+            <li>112</li>
+            <li><h6>Ärztlicher Bereitschaftsdienst:</h6></li>
+            <li>116 117</li>
+            <li><h6>Zahnärztlicher Notdienst:</h6></li>
+            <li>0761 120 120 00</li>
+            <li>kzvbw.de</li>
+            <li><h6>Tropeninstitut:</h6></li>
+            <li>06221 5622999</li>
+            <li><h6>Giftinformationszentrum:</h6></li>
+            <li>0761 19240</li>
+          </ul>
         </KontaktItem>
       </div>
     </div>
@@ -66,12 +111,16 @@ import KontaktItem from './KontaktItem.vue';
 
 .kontakt-items-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-xl);
   row-gap: var(--spacing-lg);
   max-width: 1100px;
   margin: 0 auto;
   padding-top: var(--spacing-lg);
+}
+
+em {
+  font-size: var(--font-size-xs);
 }
 
 @media (max-width: 992px) {

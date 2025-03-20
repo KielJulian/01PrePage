@@ -53,7 +53,7 @@
   /* Border-radius */
   --radius-small: 15px;
   --radius-large: 20px;
-  
+  --radius-button: 30px;
   /* Shadows */
   --box-shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   --box-shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -148,6 +148,17 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
 }
 
 /* ?? 
