@@ -25,16 +25,23 @@ defineProps({
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: var(--spacing-md);
+  transition: transform 0.3s ease;
+}
+
+.leistung-item:hover {
+  transform: translateY(-5px);
 }
 
 .title {
   color: var(--color-primary);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: var(--spacing-sm);
 }
 
 .description {
   flex-grow: 1;
-  color: #555;
+  color: var(--color-text, #555);
+  font-size: 1rem;
 }
 </style> 
