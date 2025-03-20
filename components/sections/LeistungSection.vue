@@ -39,64 +39,80 @@
       <!-- Show categories when no tags are selected -->
       <div v-else class="leistung-categories">
         <!-- Diagnostische Untersuchungen -->
-        <div class="leistung-category">
-          <h2 class="category-title">Diagnostische Untersuchungen</h2>
-          <div class="leistung-grid">
-            <LeistungItem 
-              v-for="leistung in diagnosticServices" 
-              :key="leistung.title"
-              :title="leistung.title"
-              :description="leistung.description"
-              :tags="leistung.tags"
-            />
+        <div class="collapsible-category">
+          <div class="category-header" @click="toggleCategory('diagnostics')">
+            <h3 class="category-title">Diagnostische Untersuchungen</h3>
+          </div>
+          <div class="category-content" v-show="openCategories.diagnostics">
+            <div class="leistung-grid">
+              <LeistungItem 
+                v-for="leistung in diagnosticServices" 
+                :key="leistung.title"
+                :title="leistung.title"
+                :description="leistung.description"
+                :tags="leistung.tags"
+              />
+            </div>
           </div>
         </div>
 
         <div class="category-divider"></div>
 
         <!-- Vorsorgeuntersuchungen -->
-        <div class="leistung-category">
-          <h2 class="category-title">Vorsorgeuntersuchungen</h2>
-          <div class="leistung-grid">
-            <LeistungItem 
-              v-for="leistung in preventiveServices" 
-              :key="leistung.title"
-              :title="leistung.title"
-              :description="leistung.description"
-              :tags="leistung.tags"
-            />
+        <div class="collapsible-category">
+          <div class="category-header" @click="toggleCategory('preventive')">
+            <h3 class="category-title">Vorsorgeuntersuchungen</h3>
+          </div>
+          <div class="category-content" v-show="openCategories.preventive">
+            <div class="leistung-grid">
+              <LeistungItem 
+                v-for="leistung in preventiveServices" 
+                :key="leistung.title"
+                :title="leistung.title"
+                :description="leistung.description"
+                :tags="leistung.tags"
+              />
+            </div>
           </div>
         </div>
 
         <div class="category-divider"></div>
 
         <!-- Individuelle Gesundheitsleistungen -->
-        <div class="leistung-category">
-          <h2 class="category-title">Individuelle Gesundheitsleistungen (IGeL)</h2>
-          <div class="leistung-grid">
-            <LeistungItem 
-              v-for="leistung in individualServices" 
-              :key="leistung.title"
-              :title="leistung.title"
-              :description="leistung.description"
-              :tags="leistung.tags"
-            />
+        <div class="collapsible-category">
+          <div class="category-header" @click="toggleCategory('individual')">
+            <h3 class="category-title">Individuelle Gesundheitsleistungen (IGeL)</h3>
+          </div>
+          <div class="category-content" v-show="openCategories.individual">
+            <div class="leistung-grid">
+              <LeistungItem 
+                v-for="leistung in individualServices" 
+                :key="leistung.title"
+                :title="leistung.title"
+                :description="leistung.description"
+                :tags="leistung.tags"
+              />
+            </div>
           </div>
         </div>
 
         <div class="category-divider"></div>
 
         <!-- Naturheilverfahren -->
-        <div class="leistung-category">
-          <h2 class="category-title">Naturheilverfahren</h2>
-          <div class="leistung-grid">
-            <LeistungItem 
-              v-for="leistung in naturalHealingServices" 
-              :key="leistung.title"
-              :title="leistung.title"
-              :description="leistung.description"
-              :tags="leistung.tags"
-            />
+        <div class="collapsible-category">
+          <div class="category-header" @click="toggleCategory('naturalHealing')">
+            <h3 class="category-title">Naturheilverfahren</h3>
+          </div>
+          <div class="category-content" v-show="openCategories.naturalHealing">
+            <div class="leistung-grid">
+              <LeistungItem 
+                v-for="leistung in naturalHealingServices" 
+                :key="leistung.title"
+                :title="leistung.title"
+                :description="leistung.description"
+                :tags="leistung.tags"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -110,6 +126,16 @@ import SectionHeading from '../core/SectionHeading.vue';
 import LeistungItem from './LeistungItem.vue';
 
 const selectedTags = ref([]);
+const openCategories = ref({
+  diagnostics: false,
+  preventive: false,
+  individual: false,
+  naturalHealing: false
+});
+
+const toggleCategory = (category) => {
+  openCategories.value[category] = !openCategories.value[category];
+};
 
 const diagnosticServices = [
   {
@@ -280,6 +306,10 @@ const clearTags = () => {
 </script>
 
 <style scoped>
+h3 {
+  font-size: var(--font-size-xs);
+}
+
 .leistung-section {
   padding: var(--spacing-xxl) 0;
   background-color: var(--color-background);
@@ -342,25 +372,50 @@ const clearTags = () => {
 .leistung-categories {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+}
+
+.category-divider {
+  height: 1px;
+  margin: var(--spacing-md) 0;
+}
+
+.collapsible-category {
+  border-bottom: 1px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary);
+  overflow: hidden;
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+
+.category-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
 }
 
 .category-title {
   color: var(--color-primary);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0;
   font-size: 1.8rem;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.category-content {
+  padding: var(--spacing-md);
+  background-color: var(--color-background);
+  transition: all 0.3s ease;
 }
 
 .leistung-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
-}
-
-.category-divider {
-  height: 1px;
-  background-color: var(--color-border, #e0e0e0);
-  margin: var(--spacing-md) 0;
 }
 
 @media (max-width: 992px) {
@@ -376,6 +431,10 @@ const clearTags = () => {
     padding: 5px 10px;
     font-size: 0.8rem;
   }
+  
+  .category-title {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -384,12 +443,16 @@ const clearTags = () => {
   }
   
   .category-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   .tag-buttons {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  
+  .expand-icon {
+    font-size: 1.2rem;
   }
 }
 </style> 
