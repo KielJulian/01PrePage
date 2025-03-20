@@ -113,6 +113,8 @@ const teamMembers = [
     -webkit-overflow-scrolling: touch;
     gap: var(--spacing-xs);
     padding-bottom: var(--spacing-md);
+    
+    /* Make grid wider than container and center it */
     width: calc(100% + 80px);
     margin-left: -40px; 
     padding-left: 40px;
@@ -120,23 +122,30 @@ const teamMembers = [
   }
   
   
-  .team-grid::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .team-grid::-webkit-scrollbar-track {
-    background: var(--color-background-light);
-    border-radius: 4px;
-  }
-  
-  .team-grid::-webkit-scrollbar-thumb {
-    background: var(--color-accent-green);
-    border-radius: 4px;
-  }
-  
-  .team-grid > * {
-    flex: 0 0 200px;
-    scroll-snap-align: start;
-  }
+  .team-grid {
+  /* Standard scrollbar properties (Firefox) */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-green) var(--color-background-light);
+}
+
+/* WebKit specific scrollbar styling (Chrome, Safari, newer Edge) */
+.team-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.team-grid::-webkit-scrollbar-track {
+  background: var(--color-background-light);
+  border-radius: 4px;
+}
+
+.team-grid::-webkit-scrollbar-thumb {
+  background: var(--color-accent-green);
+  border-radius: 4px;
+}
+
+.team-grid > * {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+}
 }
 </style> 
