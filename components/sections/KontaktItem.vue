@@ -22,42 +22,40 @@ defineProps({
 <style scoped>
 .kontakt-item {
   display: flex;
-  gap: var(--spacing-md);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-sm);
   margin-bottom: var(--spacing-lg);
 }
 
 .icon-container {
-  flex-shrink: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: var(--color-highlight-mint);
+  background-color: var(--color-highlight-purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
-  font-size: 1.5rem;
-}
-
-.title {
-  color: var(--color-primary);
+  color: var(--color-white);
   font-size: 1.2rem;
   margin-bottom: var(--spacing-xs);
 }
 
+.title {
+  color: var(--color-highlight-purple);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-bold);
+}
+
 .content {
-  flex-grow: 1;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   .kontakt-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .icon-container {
-    margin-bottom: var(--spacing-xs);
+    padding: var(--spacing-xs);
   }
 }
 </style> 
