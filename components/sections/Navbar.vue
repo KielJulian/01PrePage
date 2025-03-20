@@ -1,6 +1,6 @@
 <template>
   <header class="header" :class="{ 'scrolled': isScrolled }">
-    <div class="navbar" :class="{ 'expanded': mobileMenuActive }">
+    <div class="navbar" :class="{ 'expanded': mobileMenuActive }" ref="navbarRef">
       <!-- Logo and Hamburger section always visible -->
       <div class="navbar-main">
         <div class="logo">
@@ -43,23 +43,23 @@
       <div class="dropdown-content" :class="{ 'visible': mobileMenuActive }">
         <ul class="dropdown-list">
           <li class="dropdown-item">
-            <a href="#" class="dropdown-link">Home</a>
+            <a href="#" class="dropdown-link" @click="closeMenu">Home</a>
           </li>
           <li class="dropdown-item">
-            <a href="#leistungen" class="dropdown-link">Leistungen</a>
+            <a href="#leistungen" class="dropdown-link" @click="closeMenu">Leistungen</a>
           </li>
           <li class="dropdown-item">
-            <a href="#praxis" class="dropdown-link">Praxis</a>
+            <a href="#praxis" class="dropdown-link" @click="closeMenu">Praxis</a>
           </li>
           <li class="dropdown-item">
-            <a href="#team" class="dropdown-link">Team</a>
+            <a href="#team" class="dropdown-link" @click="closeMenu">Team</a>
           </li>
           <li class="dropdown-item">
-            <a href="#kontakt" class="dropdown-link">Kontakt</a>
+            <a href="#kontakt" class="dropdown-link" @click="closeMenu">Kontakt</a>
           </li>
         </ul>
         <div class="dropdown-footer">
-          <Button v-if="isMobile" class="main-button">Termin vereinbaren</Button>
+          <Button v-if="isMobile" class="main-button" @click="closeMenu">Termin vereinbaren</Button>
         </div>
       </div>
     </div>
@@ -73,6 +73,7 @@ import Button from '../core/Button.vue';
 const isScrolled = ref(false);
 const mobileMenuActive = ref(false);
 const isMobile = ref(false);
+const navbarRef = ref(null);
 
 const handleScroll = () => {
   // Only apply scroll effect if not on mobile
@@ -95,15 +96,27 @@ const toggleMobileMenu = () => {
   mobileMenuActive.value = !mobileMenuActive.value;
 };
 
+const closeMenu = () => {
+  mobileMenuActive.value = false;
+};
+
+const handleClickOutside = (event) => {
+  if (mobileMenuActive.value && navbarRef.value && !navbarRef.value.contains(event.target)) {
+    mobileMenuActive.value = false;
+  }
+};
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
   window.addEventListener('resize', checkMobile);
+  document.addEventListener('click', handleClickOutside);
   checkMobile(); // Initial check
 });
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
   window.removeEventListener('resize', checkMobile);
+  document.removeEventListener('click', handleClickOutside);
 });
 </script>
 
