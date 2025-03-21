@@ -43,6 +43,10 @@ function loadMap() {
   padding: var(--spacing-xxl) 0;
 }
 
+iframe {
+  border-radius: var(--radius-small);
+}
+
 .map-container {
   max-width: 100%;
   margin: 0 auto;
