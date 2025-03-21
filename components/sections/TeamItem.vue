@@ -29,7 +29,7 @@ defineProps({
 </script>
 
 <style scoped>
-.team-item {
+/* .team-item {
   background-color: var(--color-white);
   border-radius: var(--radius-small);
   border: 1px solid var(--color-card-boarder);
@@ -59,6 +59,50 @@ defineProps({
   filter: grayscale(100%);
 }
 
+
+.team-info {
+  padding-top: var(--spacing-sm);
+}
+
+.name {
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+}
+
+.position {
+  color: var(--color-accent-green);
+  font-weight: 600;
+  font-size: 0.9rem;
+} */
+
+.team-item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-small);
+  border: 1px solid var(--color-card-boarder);
+  overflow: hidden;
+  box-shadow: var(--box-card);
+  padding: var(--spacing-sm);
+  height: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 120%; /* For 3:4 aspect ratio */
+  border-radius: var(--radius-small);
+  overflow: hidden;
+}
+
+.team-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image covers the container */
+  border-radius: var(--radius-small);
+  filter: grayscale(100%);
+}
 
 .team-info {
   padding-top: var(--spacing-sm);

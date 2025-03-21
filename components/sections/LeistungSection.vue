@@ -335,9 +335,9 @@ h3 {
   gap: var(--spacing-xs);
 }
 
-.tag-button {
+.tag-button, .clear-filter {
   padding: 6px 12px;
-  border-radius: 20px;
+  border-radius: var(--radius-button);
   background-color: var(--color-background-alt, #f5f5f5);
   border: 1px solid var(--color-border, #e0e0e0);
   color: var(--color-text, #555);
@@ -351,19 +351,14 @@ h3 {
   border-color: var(--color-primary);
 }
 
-.tag-button:hover:not(.active) {
+.tag-button:hover:not(.active),
+.clear-filter:hover:not(.active) {
   background-color: #e8e8e8;
 }
 
 .clear-filter {
   align-self: flex-start;
-  padding: 6px 12px;
-  background-color: transparent;
-  border: 1px solid var(--color-border, #e0e0e0);
-  color: var(--color-text, #555);
-  cursor: pointer;
-  margin-top: var(--spacing-xs);
-  font-size: 0.9rem;
+
 }
 
 .filtered-items {
@@ -405,7 +400,6 @@ h3 {
 }
 
 .category-content {
-
   background-color: var(--color-background);
   transition: all 0.3s ease;
 }
