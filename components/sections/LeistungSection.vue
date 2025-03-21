@@ -127,10 +127,10 @@ import LeistungItem from './LeistungItem.vue';
 
 const selectedTags = ref([]);
 const openCategories = ref({
-  diagnostics: false,
-  preventive: false,
-  individual: false,
-  naturalHealing: false
+  diagnostics: true,
+  preventive: true,
+  individual: true,
+  naturalHealing: true
 });
 
 const toggleCategory = (category) => {
@@ -381,11 +381,7 @@ h3 {
 }
 
 .collapsible-category {
-  border-bottom: 1px solid var(--color-primary);
-  border-top: 1px solid var(--color-primary);
   overflow: hidden;
-  padding-top: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
 }
 
 .category-header {
@@ -393,6 +389,7 @@ h3 {
   justify-content: start;
   align-items: center;
   cursor: pointer;
+  padding-bottom: var(--spacing-md);
 }
 
 .category-title {
@@ -408,7 +405,7 @@ h3 {
 }
 
 .category-content {
-  padding: var(--spacing-md);
+
   background-color: var(--color-background);
   transition: all 0.3s ease;
 }

@@ -2,9 +2,9 @@
   <BaseCard :elevated="true" class="leistung-item">
     <h3 class="title">{{ title }}</h3>
     <p class="description">{{ description }}</p>
-    <div v-if="tags && tags.length > 0" class="tag-container">
+    <!-- <div v-if="tags && tags.length > 0" class="tag-container">
       <span v-for="tag in tags" :key="tag" class="tag">{{ tag }}</span>
-    </div>
+    </div> -->
   </BaseCard>
 </template>
 
@@ -37,15 +37,14 @@ defineProps({
 
 .title {
   color: var(--color-primary);
-  font-size: 1.25rem;
-  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
 }
 
 .description {
   flex-grow: 1;
   color: var(--color-text, #555);
-  font-size: 1rem;
-  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-sm);
 }
 
 .tag-container {
