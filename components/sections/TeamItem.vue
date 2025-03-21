@@ -34,7 +34,7 @@ defineProps({
   border-radius: var(--radius-small);
   border: 1px solid var(--color-card-boarder);
   overflow: hidden;
-  box-shadow: var(--box-card);
+  box-shadow: var(--box-shadow-card);
   padding: var(--spacing-sm);
   height: 100%;
 }
@@ -80,7 +80,7 @@ defineProps({
   border-radius: var(--radius-small);
   border: 1px solid var(--color-card-boarder);
   overflow: hidden;
-  box-shadow: var(--box-card);
+  box-shadow: var(--box-shadow-card);
   padding: var(--spacing-sm);
   height: 100%;
 }

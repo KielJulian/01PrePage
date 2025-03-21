@@ -53,7 +53,7 @@ import Button from '../core/Button.vue';
 .gallery-item {
   border-radius: var(--radius-small);
   overflow: hidden;
-  box-shadow: var(--box-card);
+  box-shadow: var(--box-shadow-card);
   display: flex;
   aspect-ratio: 1 / 1;  
 }

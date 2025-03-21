@@ -2,13 +2,13 @@
   <div class="leistung-item">
     <h3 class="leistung-title">{{ title }}</h3>
     <p class="leistung-description">{{ description }}</p>
-    <div class="leistung-tags">
+    <!-- <div class="leistung-tags">
       <Tag 
         v-for="tag in tags" 
         :key="tag" 
         :text="tag"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -33,33 +33,29 @@ defineProps({
 
 <style scoped>
 .leistung-item {
-  background-color: #fff;
-  border-radius: var(--radius-card);
+  background-color: var(--color-white);
+  border-radius: var(--radius-small);
   padding: var(--spacing-md);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow-card);
+  border: 1px solid var(--color-card-boarder);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.leistung-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
-
 .leistung-title {
   color: var(--color-primary);
   margin-top: 0;
-  margin-bottom: var(--spacing-xs);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
 }
 
 .leistung-description {
-  margin-bottom: var(--spacing-sm);
   color: var(--color-text);
   font-size: var(--font-size-sm);
   flex-grow: 1;
+  line-height: var(--line-height-tight);
 }
 
 .leistung-tags {

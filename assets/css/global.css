@@ -59,7 +59,7 @@
   --box-shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   --box-shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
   --box-shadow-large: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
-  --box-card: 0 1px 4px -2px #0000001a;
+  --box-shadow-card: 0 1px 4px -2px #0000001a;
 }
 
 @font-face {
