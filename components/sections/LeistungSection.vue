@@ -7,7 +7,7 @@
       />
       
       <div class="tag-filter">
-        <span class="tag-label">Nach Bereich filtern:</span>
+        <span class="tag-label">Nach Bereich filtern</span>
         <div class="tag-buttons">
           <button 
             v-for="tag in availableTags" 
