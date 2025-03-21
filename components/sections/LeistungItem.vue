@@ -1,15 +1,19 @@
 <template>
-  <BaseCard :elevated="true" class="leistung-item">
-    <h3 class="title">{{ title }}</h3>
-    <p class="description">{{ description }}</p>
-    <!-- <div v-if="tags && tags.length > 0" class="tag-container">
-      <span v-for="tag in tags" :key="tag" class="tag">{{ tag }}</span>
-    </div> -->
-  </BaseCard>
+  <div class="leistung-item">
+    <h3 class="leistung-title">{{ title }}</h3>
+    <p class="leistung-description">{{ description }}</p>
+    <div class="leistung-tags">
+      <Tag 
+        v-for="tag in tags" 
+        :key="tag" 
+        :text="tag"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
-import BaseCard from '../core/BaseCard.vue';
+import Tag from '../core/Tag.vue';
 
 defineProps({
   title: {
@@ -29,37 +33,39 @@ defineProps({
 
 <style scoped>
 .leistung-item {
+  background-color: #fff;
+  border-radius: var(--radius-card);
+  padding: var(--spacing-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-md);
 }
 
-.title {
+.leistung-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.leistung-title {
   color: var(--color-primary);
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-md);
 }
 
-.description {
+.leistung-description {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
   flex-grow: 1;
-  color: var(--color-text, #555);
-  font-size: var(--font-size-sm);
 }
 
-.tag-container {
+.leistung-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--spacing-xs);
   margin-top: auto;
-}
-
-.tag {
-  font-size: 0.75rem;
-  padding: 2px 8px;
-  border-radius: 12px;
-  background-color: var(--color-background-alt, #f5f5f5);
-  color: var(--color-text-light, #777);
-  border: 1px solid var(--color-border, #e0e0e0);
 }
 </style> 

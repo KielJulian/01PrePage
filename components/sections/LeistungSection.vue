@@ -9,14 +9,13 @@
       <div class="tag-filter">
         <span class="tag-label">Nach Bereich filtern</span>
         <div class="tag-buttons">
-          <button 
+          <Tag 
             v-for="tag in availableTags" 
             :key="tag"
-            :class="['tag-button', { active: selectedTags.includes(tag) }]"
+            :text="tag"
+            :isActive="selectedTags.includes(tag)"
             @click="toggleTag(tag)"
-          >
-            {{ tag }}
-          </button>
+          />
         </div>
         <button v-if="selectedTags.length > 0" class="clear-filter" @click="clearTags">
           Filter zurücksetzen
@@ -121,9 +120,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import SectionHeading from '../core/SectionHeading.vue';
 import LeistungItem from './LeistungItem.vue';
+import Tag from '../core/Tag.vue';
 
 const selectedTags = ref([]);
 const openCategories = ref({
@@ -347,7 +347,7 @@ h3 {
   gap: var(--spacing-xs);
 }
 
-.tag-button, .clear-filter {
+.clear-filter {
   padding: 6px 12px;
   border-radius: var(--radius-button);
   background-color: var(--color-background-alt, #f5f5f5);
@@ -355,22 +355,11 @@ h3 {
   color: var(--color-text, #555);
   cursor: pointer;
   font-size: var(--font-size-sm);
-}
-
-.tag-button.active {
-  background-color: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
-}
-
-.tag-button:hover:not(.active),
-.clear-filter:hover:not(.active) {
-  background-color: #e8e8e8;
-}
-
-.clear-filter {
   align-self: flex-start;
+}
 
+.clear-filter:hover {
+  background-color: #e8e8e8;
 }
 
 .filtered-items {
