@@ -133,6 +133,18 @@ const openCategories = ref({
   naturalHealing: true
 });
 
+onMounted(() => {
+  const isMobile = window.innerWidth < 768; // Common breakpoint for mobile
+  if (isMobile) {
+    openCategories.value = {
+      diagnostics: false,
+      preventive: false,
+      individual: false,
+      naturalHealing: false
+    };
+  }
+});
+
 const toggleCategory = (category) => {
   openCategories.value[category] = !openCategories.value[category];
 };
@@ -342,7 +354,7 @@ h3 {
   border: 1px solid var(--color-border, #e0e0e0);
   color: var(--color-text, #555);
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
 }
 
 .tag-button.active {

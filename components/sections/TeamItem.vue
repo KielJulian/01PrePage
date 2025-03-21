@@ -99,6 +99,7 @@ defineProps({
   left: 0;
   width: 100%;
   height: 100%;
+  object-position: top center;
   object-fit: cover; /* This ensures the image covers the container */
   border-radius: var(--radius-small);
   filter: grayscale(100%);
