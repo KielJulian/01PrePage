@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="top-card">
+    <!-- <div class="top-card">
       <div class="hero-section-text">
         <h1>01PrePage - Doctor's Office</h1>
         <p>Ihre Gesundheit liegt uns am Herzen</p>
@@ -9,13 +9,13 @@
       <div class="hero-section-item">
         <HeroItem4Pictures />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script setup>
-import HeroItem4Pictures from '~/components/HeroItems/HeroItem4Pictures.vue';
-import Button from '~/components/core/Button.vue';
+// import HeroItem4Pictures from '~/components/HeroItems/HeroItem4Pictures.vue';
+// import Button from '~/components/core/Button.vue';
 </script>
 
 <style scoped>
