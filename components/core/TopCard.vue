@@ -7,14 +7,12 @@
         <Button>KKontakt</Button>
       </div>
       <div class="hero-section-item">
-        <HeroItem4Pictures />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import HeroItem4Pictures from '~/components/HeroItems/HeroItem4Pictures.vue';
 import Button from '~/components/core/Button.vue';
 </script>
 
