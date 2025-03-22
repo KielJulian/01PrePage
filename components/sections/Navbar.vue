@@ -400,7 +400,8 @@ onUnmounted(() => {
   left: 0;
   height: 2px;
   background-color: var(--color-accent-yellow);
-  transition: transform 0.3s ease, width 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @media (max-width: 900px) {
