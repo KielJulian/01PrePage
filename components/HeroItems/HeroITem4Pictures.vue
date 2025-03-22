@@ -28,7 +28,6 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: var(--spacing-sm);
   align-items: stretch;
 }
 

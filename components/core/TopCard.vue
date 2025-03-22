@@ -1,18 +1,20 @@
 <template>
-  <div class="top-card">
-    <div class="hero-section-text">
+  <div class="container">
+    <div class="top-card">
+      <div class="hero-section-text">
         <h1>01PrePage - Doctor's Office</h1>
         <p>Ihre Gesundheit liegt uns am Herzen</p>
         <Button>Kontakt</Button>
       </div>
-    <div class="hero-section-item">
-      <HeroItem4Pictures />
+      <div class="hero-section-item">
+        <HeroItem4Pictures />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import HeroItem4Pictures from '~/components/HeroItems/HeroITem4Pictures.vue';
+import HeroItem4Pictures from '~/components/HeroItems/HeroItem4Pictures.vue';
 import Button from '~/components/core/Button.vue';
 </script>
 
@@ -30,8 +32,12 @@ import Button from '~/components/core/Button.vue';
 
 .hero-section-text {
   align-self: flex-start;
-  padding-top: 4rem;
+  padding-top: 6rem;
   gap: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
 }
 
 

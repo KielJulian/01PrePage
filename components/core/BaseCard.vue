@@ -22,6 +22,6 @@ defineProps({
 
 .elevated {
   border: 1px solid var(--color-card-boarder);
-  box-shadow: var(--box-card);
+  box-shadow: var(--box-shadow-card);
 }
 </style> 
