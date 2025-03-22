@@ -265,7 +265,7 @@ onUnmounted(() => {
 }
 
 .header.scrolled .navbar-main {
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: 12px;
 }
 
 .logo {
@@ -274,6 +274,7 @@ onUnmounted(() => {
   justify-content: center;
   width: max-content;
   height: max-content;
+  padding-left: 4px;
 }
 
 .logo img {
@@ -368,6 +369,9 @@ onUnmounted(() => {
 .dropdown-list {
   list-style: none;
   margin-bottom: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dropdown-item {
