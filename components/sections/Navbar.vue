@@ -12,19 +12,19 @@
         <nav class="nav-menu" v-if="!isMobile">
           <ul class="nav-list" ref="navListRef">
             <li class="nav-item">
-              <a href="#" class="nav-link" :class="{ 'active': activeSection === 'home' }">Home</a>
+              <a href="#" class="nav-link" :class="{ 'active': activeSection === 'home' }" @click.prevent="scrollToSection('home')">Home</a>
             </li>
             <li class="nav-item">
-              <a href="#leistungen" class="nav-link" :class="{ 'active': activeSection === 'leistungen' }">Leistungen</a>
+              <a href="#leistungen" class="nav-link" :class="{ 'active': activeSection === 'leistungen' }" @click.prevent="scrollToSection('leistungen')">Leistungen</a>
             </li>
             <li class="nav-item">
-              <a href="#praxis" class="nav-link" :class="{ 'active': activeSection === 'praxis' }">Praxis</a>
+              <a href="#praxis" class="nav-link" :class="{ 'active': activeSection === 'praxis' }" @click.prevent="scrollToSection('praxis')">Praxis</a>
             </li>
             <li class="nav-item">
-              <a href="#team" class="nav-link" :class="{ 'active': activeSection === 'team' }">Team</a>
+              <a href="#team" class="nav-link" :class="{ 'active': activeSection === 'team' }" @click.prevent="scrollToSection('team')">Team</a>
             </li>
             <li class="nav-item">
-              <a href="#kontakt" class="nav-link" :class="{ 'active': activeSection === 'kontakt' }">Kontakt</a>
+              <a href="#kontakt" class="nav-link" :class="{ 'active': activeSection === 'kontakt' }" @click.prevent="scrollToSection('kontakt')">Kontakt</a>
             </li>
             <div class="nav-indicator" :style="indicatorStyle"></div>
           </ul>
@@ -44,19 +44,19 @@
       <div class="dropdown-content" :class="{ 'visible': mobileMenuActive }">
         <ul class="dropdown-list">
           <li class="dropdown-item">
-            <a href="#" class="dropdown-link" @click="closeMenu">Home</a>
+            <a href="#" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('home')">Home</a>
           </li>
           <li class="dropdown-item">
-            <a href="#leistungen" class="dropdown-link" @click="closeMenu">Leistungen</a>
+            <a href="#leistungen" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('leistungen')">Leistungen</a>
           </li>
           <li class="dropdown-item">
-            <a href="#praxis" class="dropdown-link" @click="closeMenu">Praxis</a>
+            <a href="#praxis" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('praxis')">Praxis</a>
           </li>
           <li class="dropdown-item">
-            <a href="#team" class="dropdown-link" @click="closeMenu">Team</a>
+            <a href="#team" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('team')">Team</a>
           </li>
           <li class="dropdown-item">
-            <a href="#kontakt" class="dropdown-link" @click="closeMenu">Kontakt</a>
+            <a href="#kontakt" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('kontakt')">Kontakt</a>
           </li>
         </ul>
         <div class="dropdown-footer">
@@ -81,6 +81,9 @@ const indicatorStyle = ref({
   width: '0px',
   transform: 'translateX(0px)'
 });
+
+// Add a scroll offset value (adjust as needed)
+const scrollOffset = ref(100); // This value represents pixels from the top
 
 const handleScroll = () => {
   // Only apply scroll effect if not on mobile
@@ -161,6 +164,32 @@ const handleClickOutside = (event) => {
   if (mobileMenuActive.value && navbarRef.value && !navbarRef.value.contains(event.target)) {
     mobileMenuActive.value = false;
   }
+};
+
+const scrollToSection = (sectionId) => {
+  if (sectionId === 'home') {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    return;
+  }
+
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - scrollOffset.value;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+};
+
+const scrollToSectionAndCloseMenu = (sectionId) => {
+  closeMenu();
+  scrollToSection(sectionId);
 };
 
 onMounted(() => {
