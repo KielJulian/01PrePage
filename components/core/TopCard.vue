@@ -7,7 +7,7 @@
         <Button>KKontakt</Button>
       </div>
       <div class="hero-section-item">
-        <HeroItemsHeroItem4Pictures />
+        <HeroItem4Pictures />
       </div>
     </div>
   </div>
