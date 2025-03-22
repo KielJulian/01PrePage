@@ -10,22 +10,23 @@
         
         <!-- Desktop Navigation -->
         <nav class="nav-menu" v-if="!isMobile">
-          <ul class="nav-list">
+          <ul class="nav-list" ref="navListRef">
             <li class="nav-item">
-              <a href="#" class="nav-link">Home</a>
+              <a href="#" class="nav-link" :class="{ 'active': activeSection === 'home' }">Home</a>
             </li>
             <li class="nav-item">
-              <a href="#leistungen" class="nav-link">Leistungen</a>
+              <a href="#leistungen" class="nav-link" :class="{ 'active': activeSection === 'leistungen' }">Leistungen</a>
             </li>
             <li class="nav-item">
-              <a href="#praxis" class="nav-link">Praxis</a>
+              <a href="#praxis" class="nav-link" :class="{ 'active': activeSection === 'praxis' }">Praxis</a>
             </li>
             <li class="nav-item">
-              <a href="#team" class="nav-link">Team</a>
+              <a href="#team" class="nav-link" :class="{ 'active': activeSection === 'team' }">Team</a>
             </li>
             <li class="nav-item">
-              <a href="#kontakt" class="nav-link">Kontakt</a>
+              <a href="#kontakt" class="nav-link" :class="{ 'active': activeSection === 'kontakt' }">Kontakt</a>
             </li>
+            <div class="nav-indicator" :style="indicatorStyle"></div>
           </ul>
         </nav>
         
@@ -74,11 +75,65 @@ const isScrolled = ref(false);
 const mobileMenuActive = ref(false);
 const isMobile = ref(false);
 const navbarRef = ref(null);
+const activeSection = ref('home');
+const navListRef = ref(null);
+const indicatorStyle = ref({
+  width: '0px',
+  transform: 'translateX(0px)'
+});
 
 const handleScroll = () => {
   // Only apply scroll effect if not on mobile
   if (!isMobile.value) {
     isScrolled.value = window.scrollY > 50;
+  }
+  
+  // Check which section is currently visible
+  checkActiveSection();
+};
+
+const checkActiveSection = () => {
+  const sections = ['home', 'leistungen', 'praxis', 'team', 'kontakt'];
+  
+  // Home section is special case
+  if (window.scrollY < 100) {
+    activeSection.value = 'home';
+    updateIndicator();
+    return;
+  }
+  
+  // Check other sections
+  for (const section of sections) {
+    if (section === 'home') continue;
+    
+    const element = document.getElementById(section);
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      // Get the middle point of the viewport
+      const viewportMiddle = window.innerHeight / 2;
+      
+      // Consider a section active when it crosses the middle of the screen
+      if (rect.top <= viewportMiddle && rect.bottom >= viewportMiddle) {
+        activeSection.value = section;
+        updateIndicator();
+        return;
+      }
+    }
+  }
+};
+
+const updateIndicator = () => {
+  if (!navListRef.value) return;
+  
+  const activeLink = navListRef.value.querySelector(`.nav-link.active`);
+  if (activeLink) {
+    const linkRect = activeLink.getBoundingClientRect();
+    const navListRect = navListRef.value.getBoundingClientRect();
+    
+    indicatorStyle.value = {
+      width: `${linkRect.width}px`,
+      transform: `translateX(${linkRect.left - navListRect.left}px)`
+    };
   }
 };
 
@@ -89,6 +144,8 @@ const checkMobile = () => {
     isScrolled.value = false;
   } else {
     isScrolled.value = window.scrollY > 50;
+    // Update indicator position after resize
+    setTimeout(updateIndicator, 100);
   }
 };
 
@@ -111,6 +168,9 @@ onMounted(() => {
   window.addEventListener('resize', checkMobile);
   document.addEventListener('click', handleClickOutside);
   checkMobile(); // Initial check
+  checkActiveSection(); // Initial check for active section
+  // Initial indicator position after DOM is fully rendered
+  setTimeout(updateIndicator, 100);
 });
 
 onUnmounted(() => {
@@ -306,6 +366,7 @@ onUnmounted(() => {
   display: flex;
   list-style: none;
   gap: var(--spacing-md);
+  position: relative;
 }
 
 .nav-link {
@@ -313,21 +374,33 @@ onUnmounted(() => {
   font-weight: 500;
   padding: var(--spacing-xs) 0;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  transform: translateX(-50%);
-  background-color: var(--color-accent-yellow);
+  content: none;
+}
+
+.nav-link:hover {
+  color: var(--color-accent-yellow);
 }
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Add a shared indicator element */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-accent-yellow);
+  transition: transform 0.3s ease, width 0.3s ease;
 }
 
 @media (max-width: 900px) {
@@ -351,7 +424,7 @@ onUnmounted(() => {
     margin: 0 auto;
     background-color: white !important;
     overflow: hidden;
-    box-shadow: 0 4px 12px var(--box-card);
+    box-shadow: 0 4px 12px var(--box-shadow-card);
     border: 1px solid var(--color-card-boarder);
   }
   
