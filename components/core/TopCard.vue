@@ -1,13 +1,48 @@
 <template>
   <div class="top-card">
-    <slot></slot>
+    <div class="hero-section-text">
+        <h1>01PrePage - Doctor's Office</h1>
+        <p>Ihre Gesundheit liegt uns am Herzen</p>
+        <Button>Kontakt</Button>
+      </div>
+    <div class="hero-section-item">
+      <HeroItem4Pictures />
+    </div>
   </div>
 </template>
 
+<script setup>
+import HeroItem4Pictures from '~/components/HeroItems/HeroITem4Pictures.vue';
+import Button from '~/components/core/Button.vue';
+</script>
+
 <style scoped>
 .top-card {
-  border-radius: var(--radius-large);
-  padding: var(--spacing-lg);
+  color: var(--color-primary);
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: var(--spacing-xl);
 }
 
+.hero-section-text {
+  align-self: flex-start;
+  padding-top: 4rem;
+  gap: var(--spacing-md);
+}
+
+
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+}
 </style> 
