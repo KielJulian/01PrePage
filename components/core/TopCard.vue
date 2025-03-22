@@ -7,7 +7,7 @@
         <Button>KKontakt</Button>
       </div>
       <div class="hero-section-item">
-        <HeroItem4Pictures />
+        <Hero4Pictures />
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
 
 <script setup>
 import Button from '~/components/core/Button.vue';
-import HeroItem4Pictures from '~/components/HeroItems/HeroItem4Pictures.vue';
+import Hero4Pictures from '~/components/HeroItems/Hero4Pictures.vue';
 </script>
 
 <style scoped>
