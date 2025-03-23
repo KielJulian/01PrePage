@@ -68,18 +68,42 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
 import Button from '../core/Button.vue';
+import { useRoute, useRouter } from 'vue-router';
 
+const route = useRoute();
+const router = useRouter();
 const isScrolled = ref(false);
 const mobileMenuActive = ref(false);
 const isMobile = ref(false);
 const navbarRef = ref(null);
-const activeSection = ref('home');
+const activeSection = ref('');
 const navListRef = ref(null);
 const indicatorStyle = ref({
   width: '0px',
   transform: 'translateX(0px)'
+});
+
+// Check if we're on the home page or another page
+const isHomePage = computed(() => {
+  return route.path === '/' || route.path === '/index';
+});
+
+// Add watcher for route changes to handle page navigation
+watch(route, () => {
+  if (!isHomePage.value) {
+    // When on a different page like Impressum, clear active section
+    activeSection.value = '';
+    // Reset the indicator
+    indicatorStyle.value = {
+      width: '0px',
+      transform: 'translateX(0px)'
+    };
+  } else {
+    // When returning to homepage, check which section is active
+    checkActiveSection();
+  }
 });
 
 // Add a scroll offset value (adjust as needed)
@@ -98,9 +122,9 @@ const handleScroll = () => {
 const checkActiveSection = () => {
   const sections = ['home', 'leistungen', 'praxis', 'team', 'kontakt'];
   
-  // Home section is special case
+  // Home section is special case - set no active section
   if (window.scrollY < 100) {
-    activeSection.value = 'home';
+    activeSection.value = ''; // Set to empty instead of 'home'
     updateIndicator();
     return;
   }
@@ -167,6 +191,25 @@ const handleClickOutside = (event) => {
 };
 
 const scrollToSection = (sectionId) => {
+  // If we're not on the home page, navigate to the home page first
+  if (!isHomePage.value) {
+    // Navigate to home page and set target section for scrolling after navigation
+    router.push('/');
+    // Set active section immediately to update UI
+    activeSection.value = sectionId === 'home' ? '' : sectionId;
+    
+    // Add a small delay to allow navigation to complete before scrolling
+    setTimeout(() => {
+      scrollToSectionImpl(sectionId);
+    }, 100);
+    return;
+  }
+  
+  // Otherwise just scroll normally
+  scrollToSectionImpl(sectionId);
+};
+
+const scrollToSectionImpl = (sectionId) => {
   if (sectionId === 'home') {
     window.scrollTo({
       top: 0,
@@ -197,7 +240,12 @@ onMounted(() => {
   window.addEventListener('resize', checkMobile);
   document.addEventListener('click', handleClickOutside);
   checkMobile(); // Initial check
-  checkActiveSection(); // Initial check for active section
+  
+  // Only check active section if we're on the home page
+  if (isHomePage.value) {
+    checkActiveSection(); // Initial check for active section
+  }
+  
   // Initial indicator position after DOM is fully rendered
   setTimeout(updateIndicator, 100);
 });
@@ -471,7 +519,6 @@ onUnmounted(() => {
     top: auto;
     left: auto;
     width: auto;
-
     border-radius: 32px;
     overflow: hidden;
     max-height: none;

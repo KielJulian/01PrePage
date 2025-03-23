@@ -5,7 +5,7 @@
       subtitle="Informationen zum Schutz Ihrer persönlichen Daten"
     />
     
-    <TopCard class="content-card">
+    <div class="content-card">
       <h2>1. Datenschutz auf einen Blick</h2>
       <h3>Allgemeine Hinweise</h3>
       <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
@@ -49,13 +49,12 @@
 
       <h3>Recht auf Datenübertragbarkeit</h3>
       <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
-    </TopCard>
+    </div>
   </div>
 </template>
 
 <script setup>
 import SectionHeading from '~/components/core/SectionHeading.vue';
-import TopCard from '~/components/core/TopCard.vue';
 
 definePageMeta({
   layout: 'default'

@@ -19,7 +19,8 @@
 
 <style scoped>
 .footer {
-  width: var(--content-width);
+  width: 100%;
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
