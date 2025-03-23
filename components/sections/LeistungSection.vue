@@ -387,12 +387,10 @@ h3 {
   flex-direction: column;
   border: 1px solid var(--color-card-boarder);
   border-radius: var(--radius-small);
+  box-shadow: var(--box-shadow-card);
 }
 
-.category-divider {
-  height: 1px;
-  margin: var(--spacing-md) 0;
-}
+
 
 .collapsible-category {
   overflow: hidden;
@@ -428,10 +426,6 @@ h3 {
   color: var(--color-primary);
 }
 
-.category-content {
-  background-color: var(--color-background);
-  transition: all 0.3s ease;
-}
 
 .leistung-grid {
   display: grid;
