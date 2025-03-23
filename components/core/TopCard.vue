@@ -7,9 +7,9 @@
         :whileDrag="{ scale: 0.9, rotate: 5 }"
         drag
         >01PrePage - Doctor's Office</motion.h1>
-        <p>Willkommen in unserer allgemeinmedizinischen Praxis mit Schwerpunkt 
-          Familienmedizin. Wir bieten eine ganzheitliche hausärztliche Betreuung 
-          und begleiten Sie individuell durch das komplexe Gesundheitssystem.</p>
+        <p>Unsere Aufgabe als Hausarztpraxis ist es, Sie als Mensch in Ihrem 
+          familiären, sozialen, beruflichen und natürlich allem voran 
+          in ihrem gesundheitlichen Kontext zu sehen.</p>
         <Button>Kontakt</Button>
       </div>
       <div class="hero-section-item">
@@ -83,6 +83,8 @@ p {
   .hero-section-text {
     align-items: center;
     padding: 0;
+    width: 100%;
+    text-align: center;
   }
 
   h1 {

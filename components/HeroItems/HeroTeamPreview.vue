@@ -54,7 +54,7 @@
     </div>
 
     <div class="team-text">
-      <p class="team-tagline">Mit Erfahrung und Herz ins Leben gerufen – für Ihre Gesundheit</p>
+      <p class="team-tagline">Unser Team ist für Sie da – kompetent, herzlich und engagiert.</p>
       <a href="#team" class="team-link">Unser Team kennenlernen →</a>
     </div>
   </div>
@@ -146,12 +146,10 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 90px;
   position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
   width: calc(100% + 80px);
-    margin-left: -40px; 
-    padding-left: 40px;
-    padding-right: 40px;
+  margin-left: -40px; 
+  padding-left: 40px;
+  padding-right: 40px;
 
 }
 
@@ -159,7 +157,7 @@ onBeforeUnmount(() => {
   display: flex;
   position: absolute;
   animation: scroll 40s linear infinite;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
 }
 
 .mobile-image {
@@ -167,7 +165,6 @@ onBeforeUnmount(() => {
   width: 70px;
   height: 70px;
   margin-right: 20px;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 @keyframes scroll {
@@ -178,14 +175,4 @@ onBeforeUnmount(() => {
     transform: translateX(calc(-100% / 2));
   }
 }
-
-/* @media (max-width: 768px) {
-  .hero-team-preview {
-    overflow-x: hidden;
-  }
-  
-  .mobile-only {
-    display: none;
-  }
-} */
 </style>
