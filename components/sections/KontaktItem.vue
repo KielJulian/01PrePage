@@ -28,10 +28,12 @@ defineProps({
 
 .title {
   color: var(--color-primary);
-  font-size: 1.2rem;
   margin-bottom: var(--spacing-xs);
-  font-weight: var(--font-weight-bold);
-  opacity: 0.5;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-lg);
+  border-bottom: 2px solid var(--color-primary);
+  width: fit-content;
+  padding-bottom: var(--spacing-xs);
 }
 
 .content {

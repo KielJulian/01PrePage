@@ -109,7 +109,7 @@ import KontaktItem from './KontaktItem.vue';
 
 h6 {
   padding-top: var(--spacing-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-regular);
 }
 
 li:not(:has(h6)) {

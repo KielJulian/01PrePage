@@ -115,8 +115,8 @@ defineProps({
 
 .position {
   color: var(--color-accent-green);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
 }
 
 .specialty-tag {
