@@ -127,7 +127,7 @@ em {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 450px) {
   .kontakt-items-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);

@@ -7,7 +7,7 @@
             <p>Aus Datenschutzgründen wird die Karte erst nach Ihrer Zustimmung geladen.</p>
             <Button @click="loadMap" class="btn-secondary">Karte laden</Button>
           </div>
-          <iframe 
+            <iframe 
             v-else
             :src="mapUrl"
             width="100%" 
@@ -26,7 +26,7 @@ import { ref } from 'vue';
 import Button from '../core/Button.vue';
 
 const showMap = ref(false);
-const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50000!2d10.976511930224657!3d47.42088769357426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479d07f93ebd9813%3A0xdebdade217aded0c!2sZugspitze!5e0!3m2!1sen!2sus!4v1711203681151!5m2!1sen!2sus";
+const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8049.936018240594!2d11.543675352373803!3d48.17390517506173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e77cd0920142b%3A0x8476de5e0c89dc95!2sOlympiapark%20S%C3%BCd!5e0!3m2!1sen!2sde!4v1742746518043!5m2!1sen!2sde";
 
 function loadMap() {
   showMap.value = true;
@@ -57,7 +57,9 @@ iframe {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--color-accent-grey);
+  background-color: var(--color-black-05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--color-primary);
   border-radius: var(--radius-large);
   padding: var(--spacing-lg);

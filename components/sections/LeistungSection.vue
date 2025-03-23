@@ -453,6 +453,7 @@ h3 {
 @media (max-width: 992px) {
   .leistung-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
   }
   
   .tag-buttons {
@@ -469,9 +470,10 @@ h3 {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 650px) {
   .leistung-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
   }
   
   .category-title {
