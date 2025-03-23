@@ -340,8 +340,6 @@ h3 {
 
 .leistung-section {
   padding: var(--spacing-xxl) 0;
-  background-color: var(--color-background);
-  min-height: 80vh;
 }
 
 .tag-filter {

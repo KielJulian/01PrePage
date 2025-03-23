@@ -89,7 +89,7 @@ defineProps({
   position: relative;
   width: 100%;
   padding-top: 120%; /* For 3:4 aspect ratio */
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-tiny);
   overflow: hidden;
 }
 
@@ -100,8 +100,7 @@ defineProps({
   width: 100%;
   height: 100%;
   object-position: top center;
-  object-fit: cover; /* This ensures the image covers the container */
-  border-radius: var(--radius-small);
+  object-fit: cover;
   filter: grayscale(100%);
 }
 
