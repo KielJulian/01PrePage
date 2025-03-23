@@ -14,6 +14,7 @@
         <Hero4Pictures />
       </div>
     </div>
+    <HeroTeamPreview />
   </div>
 </template>
 
@@ -21,18 +22,25 @@
 import Button from '~/components/core/Button.vue';
 import Hero4Pictures from '~/components/HeroItems/Hero4Pictures.vue';
 import { motion } from "motion-v"
+import HeroTeamPreview from '~/components/HeroItems/HeroTeamPreview.vue';
 </script>
 
 <style scoped>
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: calc(100svh - (90px + 2 * 4rem));
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 .top-card {
   color: var(--color-primary);
-  margin-top: 10rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  gap: var(--spacing-xl);
+  justify-content: space-between;
 }
 
 .hero-section-text {
