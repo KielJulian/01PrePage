@@ -98,8 +98,13 @@ p {
 
 @media (max-width: 800px) {
   .page-container {
+    margin-top: var(--spacing-xxl);
     flex-direction: column;
     gap: var(--spacing-md);
+  }
+
+  .content-card {
+    margin-top: var(--spacing-xxl);
   }
 }
 </style> 
