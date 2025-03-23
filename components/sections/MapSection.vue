@@ -2,7 +2,6 @@
   <section id="map" class="map-section">
     <div class="container">     
       <div class="map-container">
-        <TopCard>
           <div v-if="!showMap" class="map-placeholder">
             <p>Google Maps Einbettung</p>
             <p>Aus Datenschutzgründen wird die Karte erst nach Ihrer Zustimmung geladen.</p>
@@ -18,7 +17,6 @@
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
-        </TopCard>
       </div>
     </div>
   </section>
@@ -26,8 +24,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import SectionHeading from '../core/SectionHeading.vue';
-import TopCard from '../core/TopCard.vue';
 import Button from '../core/Button.vue';
 
 const showMap = ref(false);

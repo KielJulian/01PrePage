@@ -127,10 +127,10 @@ import Tag from '../core/Tag.vue';
 
 const selectedTags = ref([]);
 const openCategories = ref({
-  diagnostics: true,
-  preventive: true,
-  individual: true,
-  naturalHealing: true
+  diagnostics: false,
+  preventive: false,
+  individual: false,
+  naturalHealing: false
 });
 
 onMounted(() => {
@@ -369,6 +369,8 @@ h3 {
 .leistung-categories {
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--color-card-boarder);
+  border-radius: var(--radius-small);
 }
 
 .category-divider {
@@ -378,6 +380,11 @@ h3 {
 
 .collapsible-category {
   overflow: hidden;
+  border-bottom: 1px solid var(--color-card-boarder);
+}
+
+.collapsible-category:last-child {
+  border-bottom: none;
 }
 
 .category-header {
@@ -385,13 +392,18 @@ h3 {
   justify-content: start;
   align-items: center;
   cursor: pointer;
-  padding-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
 }
 
 .category-title {
   color: var(--color-primary);
   margin-bottom: 0;
-  font-size: 1.8rem;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
+}
+
+.category-content {
+  padding: 0 var(--spacing-md) var(--spacing-md);
 }
 
 .expand-icon {

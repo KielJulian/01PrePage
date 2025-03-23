@@ -2,13 +2,13 @@
   <div class="leistung-item">
     <h3 class="leistung-title">{{ title }}</h3>
     <p class="leistung-description">{{ description }}</p>
-    <!-- <div class="leistung-tags">
+    <div class="leistung-tags">
       <Tag 
         v-for="tag in tags" 
         :key="tag" 
         :text="tag"
       />
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -62,6 +62,6 @@ defineProps({
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-xs);
-  margin-top: auto;
+  margin-top: var(--spacing-xs);
 }
 </style> 

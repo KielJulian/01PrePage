@@ -2,9 +2,13 @@
   <div class="container">
     <div class="top-card">
       <div class="hero-section-text">
-        <h1>01PrePage - Doctor's Office</h1>
+        <motion.h1
+        :whileHover="{ scale: 1.1 }"
+        :whileDrag="{ scale: 0.9, rotate: 5 }"
+        drag
+        >01PrePage - Doctor's Office</motion.h1>
         <p>Ihre Gesundheit liegt uns am Herzen</p>
-        <Button>KKontakt</Button>
+        <Button>Kontakt</Button>
       </div>
       <div class="hero-section-item">
         <Hero4Pictures />
@@ -16,6 +20,7 @@
 <script setup>
 import Button from '~/components/core/Button.vue';
 import Hero4Pictures from '~/components/HeroItems/Hero4Pictures.vue';
+import { motion } from "motion-v"
 </script>
 
 <style scoped>
