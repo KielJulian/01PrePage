@@ -417,10 +417,10 @@ h3 {
 .category-content {
   padding: 0;
   max-height: 0;
-  transition: max-height 0.3s ease-out, padding 0.3s ease;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.3s ease-out, padding 0.3s ease, opacity 0.3s ease;
+  transition: max-height 0.3s ease-out;
+  transition: max-height 0.1s ease-in;
 }
 
 .category-content.open {
@@ -432,6 +432,7 @@ h3 {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--color-primary);
+  display: flex;
 }
 
 .leistung-grid {
