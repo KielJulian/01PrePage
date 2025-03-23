@@ -36,11 +36,22 @@ import HeroTeamPreview from '~/components/HeroItems/HeroTeamPreview.vue';
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
+
+h1 {
+  color: var(--color-accent-green);
+}
+
+p {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xl);
+}
+
 .top-card {
   color: var(--color-primary);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: var(--spacing-xl);
 }
 
 .hero-section-text {
@@ -50,10 +61,11 @@ import HeroTeamPreview from '~/components/HeroItems/HeroTeamPreview.vue';
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
 }
 
-
+.hero-section-item {
+  width: 45%;
+}
 
 @media (max-width: 768px) {
   .hero-section h1 {

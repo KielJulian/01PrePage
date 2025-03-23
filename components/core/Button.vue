@@ -35,11 +35,13 @@ defineEmits(['click'])
   border-radius: var(--radius-button);
   font-weight: 600;
   font-size: 1rem;
-  padding: 0.75rem 1.5rem;
+  padding: 10px 14px 10px 14px;
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
   outline: none;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
 }
 
 .btn-primary {

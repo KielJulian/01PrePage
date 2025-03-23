@@ -83,24 +83,9 @@ const { teamMembers } = useTeamMembers();
     color: var(--color-accent-green);
 }
 
-
 @media (max-width: 768px) {
-  .team-images {
-    height: 60px;
-  }
-  
-  .team-image-wrapper {
-    height: 60px;
-    width: 60px;
-    margin-left: -10px;
-  }
-  
-  .team-tagline {
-    font-size: 1rem;
-  }
-  
-  .team-link {
-    font-size: 0.9rem;
+  .hero-team-preview {
+    display: none;
   }
 }
 </style>
