@@ -108,8 +108,8 @@ import KontaktItem from './KontaktItem.vue';
 }
 
 h6 {
+  padding-top: var(--spacing-sm);
   font-weight: var(--font-weight-medium);
-
 }
 
 li:not(:has(h6)) {
