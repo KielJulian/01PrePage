@@ -46,7 +46,7 @@
               <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </div>
           </div>
-          <div class="category-content" v-show="openCategories.diagnostics">
+          <div class="category-content" :class="{ 'open': openCategories.diagnostics }">
             <div class="leistung-grid">
               <LeistungItem 
                 v-for="leistung in diagnosticServices" 
@@ -70,7 +70,7 @@
               <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </div>
           </div>
-          <div class="category-content" v-show="openCategories.preventive">
+          <div class="category-content" :class="{ 'open': openCategories.preventive }">
             <div class="leistung-grid">
               <LeistungItem 
                 v-for="leistung in preventiveServices" 
@@ -94,7 +94,7 @@
               <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </div>
           </div>
-          <div class="category-content" v-show="openCategories.individual">
+          <div class="category-content" :class="{ 'open': openCategories.individual }">
             <div class="leistung-grid">
               <LeistungItem 
                 v-for="leistung in individualServices" 
@@ -118,7 +118,7 @@
               <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             </div>
           </div>
-          <div class="category-content" v-show="openCategories.naturalHealing">
+          <div class="category-content" :class="{ 'open': openCategories.naturalHealing }">
             <div class="leistung-grid">
               <LeistungItem 
                 v-for="leistung in naturalHealingServices" 
@@ -390,8 +390,6 @@ h3 {
   box-shadow: var(--box-shadow-card);
 }
 
-
-
 .collapsible-category {
   overflow: hidden;
   border-bottom: 1px solid var(--color-card-boarder);
@@ -417,7 +415,17 @@ h3 {
 }
 
 .category-content {
-  padding: 0 var(--spacing-md) var(--spacing-md);
+  padding: 0;
+  max-height: 0;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.category-content.open {
+  max-height: 2000px; /* Large enough to contain any content */
+  opacity: 1;
 }
 
 .expand-icon {
@@ -426,11 +434,21 @@ h3 {
   color: var(--color-primary);
 }
 
-
 .leistung-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
+}
+
+.category-content > * {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.category-content.open > * {
+  margin-top: initial;
+  margin-bottom: initial;
 }
 
 @media (max-width: 992px) {
