@@ -27,7 +27,6 @@ import HeroTeamPreview from '~/components/HeroItems/HeroTeamPreview.vue';
 
 <style scoped>
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,14 +65,23 @@ p {
 .hero-section-item {
   width: 45%;
 }
-
 @media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2rem;
+  .container {
+   align-items: flex-start;
+   align-items: center;
+  /* height: calc(100svh - (58px)); */
+}
+
+  .hero-section-text {
+    align-items: center;
+    padding: 0;
   }
-  
-  .hero-section p {
-    font-size: 1.2rem;
+
+  h1 {
+    text-align: center;
+  }
+  .hero-section-item {
+    display: none;
   }
 }
 </style> 
