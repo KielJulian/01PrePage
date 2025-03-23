@@ -7,7 +7,9 @@
         :whileDrag="{ scale: 0.9, rotate: 5 }"
         drag
         >01PrePage - Doctor's Office</motion.h1>
-        <p>Ihre Gesundheit liegt uns am Herzen</p>
+        <p>Willkommen in unserer allgemeinmedizinischen Praxis mit Schwerpunkt 
+          Familienmedizin. Wir bieten eine ganzheitliche hausärztliche Betreuung 
+          und begleiten Sie individuell durch das komplexe Gesundheitssystem.</p>
         <Button>Kontakt</Button>
       </div>
       <div class="hero-section-item">
@@ -21,8 +23,8 @@
 <script setup>
 import Button from '~/components/core/Button.vue';
 import Hero4Pictures from '~/components/HeroItems/Hero4Pictures.vue';
-import { motion } from "motion-v"
 import HeroTeamPreview from '~/components/HeroItems/HeroTeamPreview.vue';
+import { motion } from "motion-v"
 </script>
 
 <style scoped>
@@ -51,6 +53,7 @@ p {
   flex-direction: row;
   justify-content: space-between;
   gap: var(--spacing-xl);
+  width: 100%;
 }
 
 .hero-section-text {
@@ -60,16 +63,21 @@ p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 50%;
 }
 
 .hero-section-item {
-  width: 45%;
+  width: 50%;
 }
 @media (max-width: 768px) {
   .container {
    align-items: flex-start;
    align-items: center;
   /* height: calc(100svh - (58px)); */
+}
+
+.top-card {
+  flex-direction: column;
 }
 
   .hero-section-text {
