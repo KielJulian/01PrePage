@@ -1,18 +1,37 @@
 <template>
   <div class="hero-team-preview">
     <div class="team-images">
-      <div 
+      <motion.div 
         v-for="(member, index) in teamMembers" 
         :key="index" 
         class="team-image-wrapper"
         :style="{ zIndex: teamMembers.length - index }"
+        :initial="{ y: 0 }"
+        :whileHover="{ 
+          x: 20, 
+          y: -20, 
+          scale: 1.1,
+          zIndex: 10,
+          transition: { duration: 0.1 } 
+        }"
+        :whileInView="{ 
+          opacity: 1,
+          x: 0,
+          transition: { 
+            type: 'spring',
+            stiffness: 100,
+            damping: 10
+          }
+        }"
+        :initial-opacity="0"
+        :initial-x="20"
       >
         <img 
           :src="member.image" 
           :alt="member.name"
           class="team-image"
         />
-      </div>
+      </motion.div>
     </div>
     <div class="team-text">
       <p class="team-tagline">Mit Erfahrung und Herz ins Leben gerufen – für Ihre Gesundheit</p>
@@ -23,6 +42,7 @@
 
 <script setup>
 import { useTeamMembers } from '../../composables/useTeamMembers';
+import { motion } from 'motion-v';
 
 const { teamMembers } = useTeamMembers();
 </script>
@@ -39,6 +59,7 @@ const { teamMembers } = useTeamMembers();
   display: flex;
   justify-content: center;
   height: 80px;
+  perspective: 1000px;
 }
 
 .team-image-wrapper {
@@ -46,6 +67,7 @@ const { teamMembers } = useTeamMembers();
   position: relative;
   height: 80px;
   width: 80px;
+  will-change: transform;
 }
 
 .team-image-wrapper:first-child {
@@ -85,7 +107,7 @@ const { teamMembers } = useTeamMembers();
 
 @media (max-width: 768px) {
   .hero-team-preview {
-    display: none;
+    
   }
 }
 </style>
