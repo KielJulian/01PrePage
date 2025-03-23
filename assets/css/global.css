@@ -47,16 +47,17 @@
   --line-height-relaxed: 1.8;
 
   /* Layout */
+  --content-width-text: 600px;
   --content-width: 1200px;
   --max-width: 1400px;
   --navbar-width: 1400px;
 
   /* Border-radius */
+  --radius-tiny: 8px;
   --radius-small: 15px;
   --radius-large: 20px;
   --radius-button: 30px;
-  --radius-tiny: 8px;
-  
+
   /* Shadows */
   --box-shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   --box-shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);

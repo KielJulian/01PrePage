@@ -61,7 +61,7 @@ definePageMeta({
 <style scoped>
 .page-container {
   padding: var(--spacing-xxl) 0;
-  max-width: var(--content-width);
+  max-width: var(--content-width-text);
   margin: 0 auto;
   padding-left: var(--spacing-md);
   padding-right: var(--spacing-md);

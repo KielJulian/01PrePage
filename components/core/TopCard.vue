@@ -31,7 +31,7 @@ import { motion } from "motion-v"
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 100vh;
   gap: var(--spacing-xl);
 }
 
