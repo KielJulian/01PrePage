@@ -101,8 +101,7 @@ import KontaktItem from './KontaktItem.vue';
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-xl);
-  row-gap: var(--spacing-lg);
-  max-width: 1100px;
+  row-gap: var(--spacing-xl);
   margin: 0 auto;
   padding-top: var(--spacing-lg);
 }

@@ -40,9 +40,5 @@ defineProps({
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .kontakt-item {
-    padding: var(--spacing-xs);
-  }
-}
+
 </style> 

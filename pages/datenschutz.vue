@@ -63,15 +63,21 @@ definePageMeta({
 
 <style scoped>
 .page-container {
-  padding: var(--spacing-xxl) 0;
-  max-width: var(--content-width-text);
+  max-width: var(--content-width);
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--spacing-4xl);
   margin: 0 auto;
   padding-left: var(--spacing-md);
   padding-right: var(--spacing-md);
+  margin-top: var(--spacing-4xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .content-card {
-  margin-bottom: var(--spacing-xl);
+  max-width: var(--content-width-text);
 }
 
 h2 {
@@ -79,6 +85,10 @@ h2 {
   margin-bottom: var(--spacing-md);
   margin-top: var(--spacing-lg);
   font-size: 1.5rem;
+}
+
+h2:first-child {
+  margin: 0;
 }
 
 h3 {
