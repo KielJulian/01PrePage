@@ -121,46 +121,62 @@ const handleScroll = () => {
 };
 
 const checkActiveSection = () => {
-  const sections = ['home', 'leistungen', 'praxis', 'team', 'kontakt'];
-  
-  // Home section is special case - set no active section
-  if (window.scrollY < 100) {
-    activeSection.value = ''; // Set to empty instead of 'home'
-    updateIndicator();
+  // Check if we're at the top (home section)
+  if (window.scrollY < 50) {
+    if (activeSection.value !== '') {
+      activeSection.value = '';
+      nextTick(() => updateIndicator());
+    }
     return;
   }
   
-  // Check other sections
+  // Get all sections except home
+  const sections = ['leistungen', 'praxis', 'team', 'kontakt'];
+  let closestSection = null;
+  let minDistance = Infinity;
+  
+  // Find which section is closest to the top of the viewport
   for (const section of sections) {
-    if (section === 'home') continue;
-    
     const element = document.getElementById(section);
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      // Get the middle point of the viewport
-      const viewportMiddle = window.innerHeight / 2;
-      
-      // Consider a section active when it crosses the middle of the screen
-      if (rect.top <= viewportMiddle && rect.bottom >= viewportMiddle) {
-        activeSection.value = section;
-        updateIndicator();
-        return;
-      }
+    if (!element) continue;
+    
+    const rect = element.getBoundingClientRect();
+    // Calculate distance from top of viewport to top of section
+    const distance = Math.abs(rect.top);
+    
+    // Update closest section if this one is closer
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestSection = section;
     }
+  }
+  
+  // Update active section if it changed
+  if (closestSection && activeSection.value !== closestSection) {
+    activeSection.value = closestSection;
+    nextTick(() => updateIndicator());
   }
 };
 
 const updateIndicator = () => {
   if (!navListRef.value) return;
   
-  const activeLink = navListRef.value.querySelector(`.nav-link.active`);
+  const activeLink = navListRef.value.querySelector('.nav-link.active');
+  
   if (activeLink) {
     const linkRect = activeLink.getBoundingClientRect();
     const navListRect = navListRef.value.getBoundingClientRect();
     
+    // Set indicator position and width
     indicatorStyle.value = {
       width: `${linkRect.width}px`,
       transform: `translateX(${linkRect.left - navListRect.left}px)`
+    };
+  } else {
+    // Reset indicator when no active section
+    indicatorStyle.value = {
+      width: '0px',
+      transform: 'translateX(0px)'
     };
   }
 };
