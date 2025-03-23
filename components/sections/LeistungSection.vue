@@ -41,6 +41,10 @@
         <div class="collapsible-category">
           <div class="category-header" @click="toggleCategory('diagnostics')">
             <h3 class="category-title">Diagnostische Untersuchungen</h3>
+            <div class="expand-icon">
+              <svg v-if="!openCategories.diagnostics" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
           </div>
           <div class="category-content" v-show="openCategories.diagnostics">
             <div class="leistung-grid">
@@ -61,6 +65,10 @@
         <div class="collapsible-category">
           <div class="category-header" @click="toggleCategory('preventive')">
             <h3 class="category-title">Vorsorgeuntersuchungen</h3>
+            <div class="expand-icon">
+              <svg v-if="!openCategories.preventive" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
           </div>
           <div class="category-content" v-show="openCategories.preventive">
             <div class="leistung-grid">
@@ -81,6 +89,10 @@
         <div class="collapsible-category">
           <div class="category-header" @click="toggleCategory('individual')">
             <h3 class="category-title">Individuelle Gesundheitsleistungen (IGeL)</h3>
+            <div class="expand-icon">
+              <svg v-if="!openCategories.individual" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
           </div>
           <div class="category-content" v-show="openCategories.individual">
             <div class="leistung-grid">
@@ -101,6 +113,10 @@
         <div class="collapsible-category">
           <div class="category-header" @click="toggleCategory('naturalHealing')">
             <h3 class="category-title">Naturheilverfahren</h3>
+            <div class="expand-icon">
+              <svg v-if="!openCategories.naturalHealing" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
           </div>
           <div class="category-content" v-show="openCategories.naturalHealing">
             <div class="leistung-grid">
@@ -389,7 +405,7 @@ h3 {
 
 .category-header {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   padding: var(--spacing-md);
