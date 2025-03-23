@@ -2,6 +2,7 @@
   /* Colors */
   --color-background: #F7F7F7;
   --color-primary: #133882;
+  --color-light-blue: #4c82ec;
   --color-primary-rgb: 19, 56, 130;
   --color-accent-yellow: #FCD09E;
   --color-accent-grey: #BBBFD3;
@@ -94,7 +95,7 @@ body {
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-normal);
   background-color: var(--color-background);
-  color: #333;
+  color: var(--color-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -102,8 +103,6 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
 }
 
@@ -131,11 +130,6 @@ h6 {
   font-size: var(--font-size-md);
 }
 
-.subheading {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-primary);
-}
 
 p {
   font-size: var(--font-size-base);
@@ -165,31 +159,12 @@ li {
   padding: 0;
 }
 
-/* ?? 
-img {
-  max-width: 100%;
-  height: auto;
-}
-*/
 
 .container {
   width: 100%;
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
-}
-
-/* Utility classes */
-.shadow {
-  box-shadow: var(--box-shadow-default);
-}
-
-.shadow-medium {
-  box-shadow: var(--box-shadow-medium);
-}
-
-.shadow-large {
-  box-shadow: var(--box-shadow-large);
 }
 
 /* Responsive utilities */

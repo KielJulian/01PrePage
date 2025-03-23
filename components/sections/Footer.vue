@@ -23,6 +23,7 @@
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  color: var(--color-primary);
 }
 
 .footer-content {
@@ -46,11 +47,14 @@
   display: flex;
   flex-direction: row;
   gap: var(--spacing-md);
+  opacity: 0.5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .footer-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: var(--spacing-lg);
     text-align: center;
   }
