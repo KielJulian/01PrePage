@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ 'scrolled': isScrolled }">
+  <header class="header" :class="{ 'scrolled': isScrolled }" v-show="isReady">
     <div class="navbar" :class="{ 'expanded': mobileMenuActive }" ref="navbarRef">
       <!-- Logo and Hamburger section always visible -->
       <div class="navbar-main">
@@ -68,7 +68,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch, nextTick } from 'vue';
 import Button from '../core/Button.vue';
 import { useRoute, useRouter } from 'vue-router';
 
@@ -80,6 +80,7 @@ const isMobile = ref(false);
 const navbarRef = ref(null);
 const activeSection = ref('');
 const navListRef = ref(null);
+const isReady = ref(false);
 const indicatorStyle = ref({
   width: '0px',
   transform: 'translateX(0px)'
@@ -236,18 +237,43 @@ const scrollToSectionAndCloseMenu = (sectionId) => {
 };
 
 onMounted(() => {
+  // Delay showing the navbar until everything is ready
+  isReady.value = false;
+  
+  // Set up event listeners
   window.addEventListener('scroll', handleScroll);
   window.addEventListener('resize', checkMobile);
   document.addEventListener('click', handleClickOutside);
-  checkMobile(); // Initial check
+  
+  // Initial mobile check
+  checkMobile();
   
   // Only check active section if we're on the home page
   if (isHomePage.value) {
     checkActiveSection(); // Initial check for active section
   }
   
-  // Initial indicator position after DOM is fully rendered
-  setTimeout(updateIndicator, 100);
+  // Wait for everything to be ready before showing the navbar
+  window.addEventListener('load', () => {
+    // Add a small delay to ensure all styles and responsive layouts are applied
+    setTimeout(() => {
+      isReady.value = true;
+      // Initial indicator position after DOM is fully rendered
+      nextTick(() => {
+        updateIndicator();
+      });
+    }, 200); // 200ms delay should be enough for most cases
+  });
+  
+  // Fallback in case the load event already fired
+  if (document.readyState === 'complete') {
+    setTimeout(() => {
+      isReady.value = true;
+      nextTick(() => {
+        updateIndicator();
+      });
+    }, 200);
+  }
 });
 
 onUnmounted(() => {
