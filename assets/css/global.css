@@ -18,6 +18,18 @@
   --color-card-boarder: #1338821a;
   --color-black-05: rgba(0, 0, 0, 0.5);
 
+  --color-tag-diagnostics: #D6E4FF;
+  --color-tag-heart: #FFC9C9;
+  --color-tag-lung: #C7E9F1;
+  --color-tag-prevention: #C8F4D4;
+  --color-tag-cancer: #E5D6F8;
+  --color-tag-igel: #FFEEDB;
+  --color-tag-immune: #FFE1AD;
+  --color-tag-natural: #FFF0C9;
+  --color-tag-nutrition: #FFE6C7;
+  --color-tag-pain: #FFD6AF;
+  --color-tag-default: #FFE6C7;
+  
   /* Spacing */
   --spacing-xs: 8px;
   --spacing-sm: 16px;

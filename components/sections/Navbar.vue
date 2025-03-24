@@ -306,7 +306,7 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   z-index: 1000;
-  margin-top: var(--spacing-md);
+  margin-top: var(--spacing-xxl);
   background-color: transparent;
   box-sizing: border-box;
 }

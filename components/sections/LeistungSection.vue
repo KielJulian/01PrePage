@@ -143,7 +143,7 @@ import Tag from '../core/Tag.vue';
 
 const selectedTags = ref([]);
 const openCategories = ref({
-  diagnostics: false,
+  diagnostics: true,
   preventive: false,
   individual: false,
   naturalHealing: false
@@ -381,18 +381,13 @@ h3 {
 }
 
 .leistung-categories {
-  /* background: linear-gradient(to bottom, var(--color-white), transparent); */
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
-  /* border: 1px solid var(--color-card-boarder);
-  border-radius: var(--radius-small);
-  box-shadow: var(--box-shadow-card); */
 }
 
 .collapsible-category {
   overflow: hidden;
-  /* border-bottom: 1px solid var(--color-card-boarder); */
 }
 
 .collapsible-category:last-child {

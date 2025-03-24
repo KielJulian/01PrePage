@@ -50,90 +50,76 @@ const tagClass = computed(() => {
 .tag {
   padding: 6px 12px;
   border-radius: var(--radius-button, 4px);
-  background-color: var(--color-background-alt, #f5f5f5);
-  border: 1px solid var(--color-border, #e0e0e0);
-  color: var(--color-text, #555);
+  border: 1px solid var(--color-card-boarder);
+  color: var(--color-text);
   cursor: pointer;
   font-size: var(--font-size-sm, 0.875rem);
   transition: all 0.2s ease;
 }
 
 .tag:hover:not(.active) {
-  background-color: var(--color-white);
+  filter: brightness(0.9);
 }
 
 .tag.active {
-  background-color: var(--color-primary);
-  color: white;
   border-color: var(--color-primary);
 }
 
 /* Tag-specific styles */
 .tag-diagnostics {
-  border-color: #3498db;
-  color: #3498db;
+  background-color: var(--color-tag-diagnostics);
 }
 
 .tag-heart {
-  border-color: #e74c3c;
-  color: #e74c3c;
+  background-color: var(--color-tag-heart);
 }
 
 .tag-lung {
-  border-color: #3498db;
-  color: #3498db;
+  background-color: var(--color-tag-lung);
 }
 
 .tag-prevention {
-  border-color: #2ecc71;
-  color: #2ecc71;
+  background-color: var(--color-tag-prevention);
 }
 
 .tag-cancer {
-  border-color: #9b59b6;
-  color: #9b59b6;
+  background-color: var(--color-tag-cancer);
 }
 
 .tag-igel {
-  border-color: #f39c12;
-  color: #f39c12;
+  background-color: var(--color-tag-igel);
 }
 
 .tag-immune {
-  border-color: #27ae60;
-  color: #27ae60;
+  background-color: var(--color-tag-immune);
 }
 
 .tag-natural {
-  border-color: #16a085;
-  color: #16a085;
+  background-color: var(--color-tag-natural);
 }
 
 .tag-nutrition {
-  border-color: #f1c40f;
-  color: #f1c40f;
+  background-color: var(--color-tag-nutrition);
 }
 
 .tag-pain {
-  border-color: #c0392b;
-  color: #c0392b;
+  background-color: var(--color-tag-pain);
 }
 
 .tag-default {
-  border-color: #95a5a6;
-  color: #95a5a6;
+  background-color: var(--color-tag-default);
 }
 
 /* Active state overrides specific colors */
-.tag.active.tag-diagnostics { background-color: #3498db; color: white; }
-.tag.active.tag-heart { background-color: #e74c3c; color: white; }
-.tag.active.tag-lung { background-color: #3498db; color: white; }
-.tag.active.tag-prevention { background-color: #2ecc71; color: white; }
-.tag.active.tag-cancer { background-color: #9b59b6; color: white; }
-.tag.active.tag-igel { background-color: #f39c12; color: white; }
-.tag.active.tag-immune { background-color: #27ae60; color: white; }
-.tag.active.tag-natural { background-color: #16a085; color: white; }
-.tag.active.tag-nutrition { background-color: #f1c40f; color: white; }
-.tag.active.tag-pain { background-color: #c0392b; color: white; }
-.tag.active.tag-default { background-color: #95a5a6; color: white; }
+.tag.active.tag-diagnostics { background-color: #94b4f0; }
+.tag.active.tag-heart       { background-color: #f5a3a3; }
+.tag.active.tag-lung        { background-color: #94d3ef; }
+.tag.active.tag-prevention  { background-color: #8ee5c1; }
+.tag.active.tag-cancer      { background-color: #c7a6e3; }
+.tag.active.tag-igel        { background-color: #f7c887; }
+.tag.active.tag-immune      { background-color: #f4bd67; }
+.tag.active.tag-natural     { background-color: #f5da87; }
+.tag.active.tag-nutrition   { background-color: #f8d97a; }
+.tag.active.tag-pain        { background-color: #f29b8e; }
+.tag.active.tag-default     { background-color: #f3c896; }
 </style> 

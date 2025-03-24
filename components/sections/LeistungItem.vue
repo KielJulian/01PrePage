@@ -64,4 +64,8 @@ defineProps({
   gap: var(--spacing-xs);
   margin-top: var(--spacing-xs);
 }
+
+:deep(.tag:hover) {
+  filter: none !important;
+}
 </style> 

@@ -7,7 +7,7 @@
         <p>Unsere Aufgabe als Hausarztpraxis ist es, Sie als Mensch in Ihrem 
           familiären, sozialen, beruflichen und natürlich allem voran 
           in ihrem gesundheitlichen Kontext zu sehen.</p>
-        <Button>Termin vereinbaren</Button>
+        <Button>Zu den Leistungen</Button>
       </div>
       <div class="hero-section-item">
         <Hero4Pictures />
