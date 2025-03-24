@@ -543,7 +543,7 @@ onUnmounted(() => {
 
   .navbar {
     border-radius: 32px;
-    max-width: calc(100% - var(--spacing-xs) * 2);
+    max-width: calc(100% - var(--spacing-sm) * 2);
     margin: 0 auto;
     background-color: white !important;
     overflow: hidden;
