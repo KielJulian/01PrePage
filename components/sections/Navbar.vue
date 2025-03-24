@@ -328,6 +328,7 @@ onUnmounted(() => {
   margin: 0 auto;
   background-color: transparent;
   border-radius: 32px;
+  padding:var(--spacing-xs) var(--spacing-sm);
 }
 
 .navbar.expanded {
@@ -351,10 +352,6 @@ onUnmounted(() => {
     rgba(0, 0, 0, 0.07) 0px 0.60219px 0.60219px -1.25px,
     rgba(0, 0, 0, 0.063) 0px 2.28853px 2.28853px -2.5px,
     rgba(0, 0, 0, 0.024) 0px 10px 10px -3.75px;
-}
-
-.header.scrolled .navbar-main {
-  padding: 12px;
 }
 
 .logo {
@@ -392,16 +389,16 @@ onUnmounted(() => {
     padding-right: var(--spacing-sm);
   }
 }
-
+/* 
 .logo h1 {
   color: var(--color-primary);
   font-size: 1.8rem;
   margin: 0;
-}
-
+} */
+/* 
 .header.scrolled .logo h1 {
   font-size: 1.5rem;
-}
+} */
 
 .nav-right {
   display: flex;
@@ -556,7 +553,7 @@ onUnmounted(() => {
   
   .navbar-main {
     background-color: white;
-    padding: 12px 16px 12px 16px;
+    padding: 4px;
   }
   
   .navbar.expanded {
@@ -573,6 +570,7 @@ onUnmounted(() => {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding-bottom: var(--spacing-md);
     background-color: white;
+    margin-top: var(--spacing-sm);
   }
   
   .menu-toggle {
