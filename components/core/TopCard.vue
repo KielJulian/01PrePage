@@ -3,10 +3,10 @@
     <div class="top-card">
       <div class="hero-section-text">
         <h1
-        >01PrePage - Doctor's Office</h1>
-        <p>Unsere Aufgabe als Hausarztpraxis ist es, Sie als Mensch in Ihrem 
-          familiären, sozialen, beruflichen und natürlich allem voran 
-          in ihrem gesundheitlichen Kontext zu sehen.</p>
+        >Vorschau-Seite</h1>
+        <p>Willkommen auf der Vorschau-Seite! Design, Inhalte 
+          und Funktionen können individuell 
+          angepasst werden – teilen Sie mir gerne Ihre Wünsche mit.</p>
         <Button>Zu den Leistungen</Button>
       </div>
       <div class="hero-section-item">
