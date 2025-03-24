@@ -7,7 +7,7 @@
         <p>Willkommen auf der Vorschau-Seite! Design, Inhalte 
           und Funktionen können individuell 
           angepasst werden – teilen Sie mir gerne Ihre Wünsche mit.</p>
-        <Button>Zu den Leistungen</Button>
+          <Button @click="scrollToLeistungen">Zu den Leistungen</Button>
       </div>
       <div class="hero-section-item">
         <Hero4Pictures />
@@ -21,6 +21,13 @@
 import Button from '~/components/core/Button.vue';
 import Hero4Pictures from '~/components/HeroItems/Hero4Pictures.vue';
 import HeroTeamPreview from '~/components/HeroItems/HeroTeamPreview.vue';
+
+const scrollToLeistungen = () => {
+  const leistungSection = document.querySelector('.leistung-section');
+  if (leistungSection) {
+    leistungSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 <style scoped>
