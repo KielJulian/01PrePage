@@ -72,7 +72,6 @@
   align-self: flex-start;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .gallery {
     display: none;
