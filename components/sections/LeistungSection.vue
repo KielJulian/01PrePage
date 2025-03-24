@@ -386,6 +386,7 @@ h3 {
   border: 1px solid var(--color-card-boarder);
   border-radius: var(--radius-small);
   box-shadow: var(--box-shadow-card);
+  background: linear-gradient(to bottom, var(--color-white), transparent);
 }
 
 .collapsible-category {
