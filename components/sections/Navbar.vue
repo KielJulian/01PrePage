@@ -339,7 +339,6 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-lg);
   background-color: transparent;
 }
 
@@ -364,7 +363,6 @@ onUnmounted(() => {
   justify-content: center;
   width: max-content;
   height: max-content;
-  padding-left: 4px;
 }
 
 .logo img {
@@ -558,6 +556,7 @@ onUnmounted(() => {
   
   .navbar-main {
     background-color: white;
+    padding: 12px 16px 12px 16px;
   }
   
   .navbar.expanded {

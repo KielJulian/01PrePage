@@ -2,11 +2,8 @@
   <div class="container">
     <div class="top-card">
       <div class="hero-section-text">
-        <motion.h1
-        :whileHover="{ scale: 1.1 }"
-        :whileDrag="{ scale: 0.9, rotate: 5 }"
-        drag
-        >01PrePage - Doctor's Office</motion.h1>
+        <h1
+        >01PrePage - Doctor's Office</h1>
         <p>Unsere Aufgabe als Hausarztpraxis ist es, Sie als Mensch in Ihrem 
           familiären, sozialen, beruflichen und natürlich allem voran 
           in ihrem gesundheitlichen Kontext zu sehen.</p>
@@ -24,7 +21,6 @@
 import Button from '~/components/core/Button.vue';
 import Hero4Pictures from '~/components/HeroItems/Hero4Pictures.vue';
 import HeroTeamPreview from '~/components/HeroItems/HeroTeamPreview.vue';
-import { motion } from "motion-v"
 </script>
 
 <style scoped>
@@ -58,10 +54,10 @@ p {
 
 .hero-section-text {
   align-self: flex-start;
-  padding-top: 6rem;
   gap: var(--spacing-md);
   display: flex;
   flex-direction: column;
+  align-self: center;
   align-items: flex-start;
   width: 50%;
 }

@@ -173,11 +173,11 @@ li {
 }
 
 /* Responsive utilities */
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .container {
     max-width: 95%;
   }
-}
+} */
 
 @media (max-width: 768px) {
   :root {

@@ -2,38 +2,19 @@
   <div class="hero-team-preview">
     <div class="team-images" :class="{'mobile-only': isMobile}">
       <!-- Desktop version -->
-      <motion.div 
+      <div 
         v-if="!isMobile"
         v-for="(member, index) in teamMembers" 
         :key="index" 
         class="team-image-wrapper"
         :style="{ zIndex: teamMembers.length - index }"
-        :initial="{ y: 0 }"
-        :whileHover="{ 
-          x: 20, 
-          y: -20, 
-          scale: 1.1,
-          zIndex: 10,
-          transition: { duration: 0.1 } 
-        }"
-        :whileInView="{ 
-          opacity: 1,
-          x: 0,
-          transition: { 
-            type: 'spring',
-            stiffness: 100,
-            damping: 10
-          }
-        }"
-        :initial-opacity="0"
-        :initial-x="20"
       >
         <img 
           :src="member.image" 
           :alt="member.name"
           class="team-image"
         />
-      </motion.div>
+      </div>
     </div>
 
     <!-- Mobile version with CSS animation -->
@@ -62,7 +43,6 @@
 
 <script setup>
 import { useTeamMembers } from '../../composables/useTeamMembers';
-import { motion } from 'motion-v';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const { teamMembers } = useTeamMembers();
@@ -70,7 +50,7 @@ const isMobile = ref(false);
 
 const checkIfMobile = () => {
   if (typeof window === 'undefined') return;
-  isMobile.value = window.innerWidth <= 660;
+  isMobile.value = window.innerWidth <= 480;
 };
 
 onMounted(() => {
@@ -146,10 +126,9 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 90px;
   position: relative;
-  width: calc(100% + 96px);
-  margin-left: -48px;
-  padding-left: 48px;
-  padding-right: 48px;
+  width: calc(100% + 32px);
+  padding-left: 16px;
+  padding-right: 16px;
   overflow: hidden;
 }
 
@@ -176,9 +155,15 @@ onBeforeUnmount(() => {
   }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 480px) {
   .team-images {
     display: none;
   }
+}
+
+@media (max-width: 630px) {
+    .team-image-wrapper {
+        margin-left: -35px;
+    }
 }
 </style>
