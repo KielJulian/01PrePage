@@ -10,7 +10,7 @@
         <p>Unsere Aufgabe als Hausarztpraxis ist es, Sie als Mensch in Ihrem 
           familiären, sozialen, beruflichen und natürlich allem voran 
           in ihrem gesundheitlichen Kontext zu sehen.</p>
-        <Button>Kontakt</Button>
+        <Button>Termin vereinbaren</Button>
       </div>
       <div class="hero-section-item">
         <Hero4Pictures />
@@ -73,8 +73,9 @@ p {
   .container {
    align-items: flex-start;
    align-items: center;
-  /* height: calc(100svh - (58px)); */
-}
+   height: calc(100svh - (80px));
+   margin: 0;
+  }
 
 .top-card {
   flex-direction: column;

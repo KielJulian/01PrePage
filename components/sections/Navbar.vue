@@ -5,7 +5,7 @@
       <div class="navbar-main">
         <div class="logo">
           <img src="/public/img/icons/logo.svg" alt="Logo">
-          <span v-if="mobileMenuActive" class="logo-text">01PrePage</span>
+          <!-- <span v-if="mobileMenuActive" class="logo-text">01PrePage</span> -->
         </div>
         
         <!-- Desktop Navigation -->
@@ -369,8 +369,8 @@ onUnmounted(() => {
 
 .logo img {
   display: block;
-  width: 24px;
-  height: auto;
+  width: auto;
+  height: 40px;
 }
 
 .logo-text {
@@ -542,6 +542,10 @@ onUnmounted(() => {
     right: 0;
   }
   
+  .logo img {
+    height: 32px;
+  }
+
   .navbar {
     border-radius: 32px;
     max-width: calc(100% - var(--spacing-xs) * 2);

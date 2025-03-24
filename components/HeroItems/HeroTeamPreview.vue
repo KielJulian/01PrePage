@@ -70,7 +70,7 @@ const isMobile = ref(false);
 
 const checkIfMobile = () => {
   if (typeof window === 'undefined') return;
-  isMobile.value = window.innerWidth <= 768;
+  isMobile.value = window.innerWidth <= 660;
 };
 
 onMounted(() => {
@@ -146,11 +146,11 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 90px;
   position: relative;
-  width: calc(100% + 80px);
-  margin-left: -40px; 
-  padding-left: 40px;
-  padding-right: 40px;
-
+  width: calc(100% + 96px);
+  margin-left: -48px;
+  padding-left: 48px;
+  padding-right: 48px;
+  overflow: hidden;
 }
 
 .scroll-track {
@@ -158,13 +158,13 @@ onBeforeUnmount(() => {
   position: absolute;
   animation: scroll 40s linear infinite;
   gap: var(--spacing-xs);
+  overflow: hidden;
 }
 
 .mobile-image {
   flex-shrink: 0;
   width: 70px;
   height: 70px;
-  margin-right: 20px;
 }
 
 @keyframes scroll {
@@ -173,6 +173,12 @@ onBeforeUnmount(() => {
   }
   100% {
     transform: translateX(calc(-100% / 2));
+  }
+}
+
+@media (max-width: 660px) {
+  .team-images {
+    display: none;
   }
 }
 </style>
