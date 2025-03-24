@@ -36,7 +36,7 @@
 
     <div class="team-text">
       <p class="team-tagline">Unser Team ist für Sie da – kompetent, herzlich und engagiert.</p>
-      <a href="#team" class="team-link">Unser Team kennenlernen →</a>
+      <a @click.prevent="scrollToTeam" class="team-link">Unser Team kennenlernen →</a>
     </div>
   </div>
 </template>
@@ -47,6 +47,19 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const { teamMembers } = useTeamMembers();
 const isMobile = ref(false);
+
+const scrollToTeam = () => {
+  const teamSection = document.querySelector('#team');
+  if (teamSection) {
+    const rect = teamSection.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const targetPosition = scrollTop + rect.top - 100; // 100px offset
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }
+};
 
 const checkIfMobile = () => {
   if (typeof window === 'undefined') return;

@@ -25,7 +25,13 @@ import HeroTeamPreview from '~/components/HeroItems/HeroTeamPreview.vue';
 const scrollToLeistungen = () => {
   const leistungSection = document.querySelector('.leistung-section');
   if (leistungSection) {
-    leistungSection.scrollIntoView({ behavior: 'smooth' });
+    const rect = leistungSection.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const targetPosition = scrollTop + rect.top - 100; // 100px offset
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
   }
 };
 </script>
