@@ -381,17 +381,18 @@ h3 {
 }
 
 .leistung-categories {
+  /* background: linear-gradient(to bottom, var(--color-white), transparent); */
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--color-card-boarder);
+  gap: var(--spacing-xs);
+  /* border: 1px solid var(--color-card-boarder);
   border-radius: var(--radius-small);
-  box-shadow: var(--box-shadow-card);
-  background: linear-gradient(to bottom, var(--color-white), transparent);
+  box-shadow: var(--box-shadow-card); */
 }
 
 .collapsible-category {
   overflow: hidden;
-  border-bottom: 1px solid var(--color-card-boarder);
+  /* border-bottom: 1px solid var(--color-card-boarder); */
 }
 
 .collapsible-category:last-child {
@@ -399,6 +400,9 @@ h3 {
 }
 
 .category-header {
+  border: 1px solid var(--color-card-boarder);
+  background-color: var(--color-white);
+  border-radius: var(--radius-small);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -443,7 +447,7 @@ h3 {
 .category-content > * {
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0 var(--spacing-md) var(--spacing-md);
+  padding: var(--spacing-md);
 }
 
 .category-content.open > * {
@@ -478,7 +482,7 @@ h3 {
   }
   
   .category-title {
-    font-size: 1.3rem;
+    font-size: var(--font-size-base);
   }
   
   .tag-buttons {
@@ -487,7 +491,8 @@ h3 {
   }
   
   .expand-icon {
-    font-size: 1.2rem;
+    width: 20px;
+    height: 20px;
   }
 }
 </style> 
