@@ -1,6 +1,10 @@
 <template>
   <header class="header" :class="{ 'scrolled': isScrolled }" v-show="isReady">
-    <div class="navbar" :class="{ 'expanded': mobileMenuActive }" ref="navbarRef">
+    <div 
+      class="navbar" 
+      :class="{ 'expanded': mobileMenuActive }" 
+      ref="navbarRef"
+    >
       <!-- Logo and Hamburger section always visible -->
       <div class="navbar-main">
         <div class="logo">
@@ -40,27 +44,33 @@
         </div>
       </div>
       
-      <!-- Mobile Dropdown Content -->
-      <div class="dropdown-content" :class="{ 'visible': mobileMenuActive }">
-        <ul class="dropdown-list">
-          <li class="dropdown-item">
-            <a href="#" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('home')">Home</a>
-          </li>
-          <li class="dropdown-item">
-            <a href="#leistungen" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('leistungen')">Leistungen</a>
-          </li>
-          <li class="dropdown-item">
-            <a href="#praxis" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('praxis')">Praxis</a>
-          </li>
-          <li class="dropdown-item">
-            <a href="#team" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('team')">Team</a>
-          </li>
-          <li class="dropdown-item">
-            <a href="#kontakt" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('kontakt')">Kontakt</a>
-          </li>
-        </ul>
-        <div class="dropdown-footer">
-          <Button v-if="isMobile" class="main-button" @click="closeMenu">Termin vereinbaren</Button>
+      <!-- Mobile Dropdown Content using transition + CSS -->
+      <div v-if="mobileMenuActive || isAnimating" class="dropdown-wrapper">
+        <div 
+          class="dropdown-content" 
+          :class="{ 'visible': mobileMenuActive, 'hidden': !mobileMenuActive }"
+          @transitionend="onTransitionEnd"
+        >
+          <ul class="dropdown-list">
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('home')">Home</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#leistungen" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('leistungen')">Leistungen</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#praxis" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('praxis')">Praxis</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#team" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('team')">Team</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#kontakt" class="dropdown-link" @click.prevent="scrollToSectionAndCloseMenu('kontakt')">Kontakt</a>
+            </li>
+          </ul>
+          <div class="dropdown-footer">
+            <Button v-if="isMobile" class="main-button" @click="closeMenu">Termin vereinbaren</Button>
+          </div>
         </div>
       </div>
     </div>
@@ -76,6 +86,7 @@ const route = useRoute();
 const router = useRouter();
 const isScrolled = ref(false);
 const mobileMenuActive = ref(false);
+const isAnimating = ref(false);
 const isMobile = ref(false);
 const navbarRef = ref(null);
 const activeSection = ref('');
@@ -85,6 +96,13 @@ const indicatorStyle = ref({
   width: '0px',
   transform: 'translateX(0px)'
 });
+
+// Track animation state
+const onTransitionEnd = () => {
+  if (!mobileMenuActive.value) {
+    isAnimating.value = false;
+  }
+};
 
 // Check if we're on the home page or another page
 const isHomePage = computed(() => {
@@ -194,6 +212,9 @@ const checkMobile = () => {
 };
 
 const toggleMobileMenu = () => {
+  if (!mobileMenuActive.value) {
+    isAnimating.value = true;
+  }
   mobileMenuActive.value = !mobileMenuActive.value;
 };
 
@@ -332,8 +353,11 @@ onUnmounted(() => {
 }
 
 .navbar.expanded {
-  border-radius: 0;
+  padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
+  border-radius: var(--radius-small);
   max-height: 100vh;
+  transform: translateY(-6px);
+  transition: transform 0.3s ease;
 }
 
 .navbar-main {
@@ -418,6 +442,7 @@ onUnmounted(() => {
   width: 25px;
   height: 3px;
   background-color: var(--color-primary);
+  transition: transform 0.1s ease, opacity 0.1s ease;
 }
 
 .bar.active:nth-child(1) {
@@ -433,22 +458,35 @@ onUnmounted(() => {
 }
 
 /* Dropdown Styles */
+.dropdown-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
 .dropdown-content {
-  display: none;
-  padding: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
   position: relative;
-  border-top: 1px solid var(--color-card-boarder);
+  border: 1px solid var(--color-card-boarder);
+  box-shadow: var(--box-shadow-card);
+  border-radius: var(--radius-small);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  will-change: transform;
+  transition: max-height 0.2s ease-out, opacity 0.2s ease-out, padding 0.2s ease-out;
 }
 
 .dropdown-content.visible {
-  display: block;
+  max-height: 500px; /* Adjust this value to be larger than your content height */
+  opacity: 1;
+  /* padding: var(--spacing-lg); */
 }
 
-.close-button {
-  position: absolute;
-  top: var(--spacing-md);
-  right: var(--spacing-md);
-  cursor: pointer;
+.dropdown-content.hidden {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .dropdown-list {
@@ -477,7 +515,6 @@ onUnmounted(() => {
   justify-content: center;
   padding-top: var(--spacing-md);
   margin-top: var(--spacing-md);
-  border-top: 1px solid var(--color-card-boarder);
 }
 
 .nav-list {
@@ -545,14 +582,15 @@ onUnmounted(() => {
     border-radius: 32px;
     max-width: calc(100% - var(--spacing-sm) * 2);
     margin: 0 auto;
-    background-color: white !important;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     overflow: hidden;
     box-shadow: 0 4px 12px var(--box-shadow-card);
     border: 1px solid var(--color-card-boarder);
   }
   
   .navbar-main {
-    background-color: white;
     padding: 4px;
   }
   
@@ -567,8 +605,7 @@ onUnmounted(() => {
   }
   
   .dropdown-content {
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    padding-bottom: var(--spacing-md);
+    /* padding-bottom: var(--spacing-md); */
     background-color: white;
     margin-top: var(--spacing-sm);
   }
